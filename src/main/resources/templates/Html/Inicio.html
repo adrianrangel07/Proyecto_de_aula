@@ -46,7 +46,8 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/login_persona}">INICIAR
+                                <a class="letras nav-rp nav-link " aria-current="page"
+                                    th:href="@{/login_persona}">INICIAR
                                     SESIÓN </a>
                             </li>
                             <li class="nav-item">
@@ -59,11 +60,13 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="letras dropdown-item" href="#">Estadisticas</a></li>
-                                    <li><a class="letras dropdown-item" th:href="@{/Inicio_Sesion_Empresa}">Empresa</a></li>
+                                    <li><a class="letras dropdown-item" th:href="@{/Inicio_Sesion_Empresa}">Empresa</a>
+                                    </li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="letras dropdown-item" th:href="@{/Nosotros}">Aprende con Nosotros</a></li>
+                                    <li><a class="letras dropdown-item" th:href="@{/Nosotros}">Aprende con Nosotros</a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -75,71 +78,20 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-9" th:each="Oferta:${Ofertas}">
-                    <div class="oferta" >
-                        <div class="offer" data-id="offer1" onclick="openOfferDetails('offer1')">
-                            <div class="datos">
-                                <h3>${Oferta.titulo_puesto}</h3>
-                                <p th:text="${Oferta.descripcion}"></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="offer" data-id="offer2" onclick="openOfferDetails('offer2')">
-                        <div class="datos">
-                            <h3>Ingeniero ambiental</h3>
-                            <p>Se busca ingeniero ambiental</p>
-                        </div>
-                    </div>
-                    <div class="offer" data-id="offer3" onclick="openOfferDetails('offer3')">
-                        <div class="datos">
-                            <h3>offer 3</h3>
-                            <p>details offer 3</p>
-                        </div>
-                    </div>
-                    <div class="offer" data-id="offer4" onclick="openOfferDetails('offer4')">
-                        <div class="datos">
-                            <h3>offer 4</h3>
-                            <p>details offer 4</p>
-                        </div>
-                    </div>
-                    <div class="offer" data-id="offer5" onclick="openOfferDetails('offer5')">
-                        <div class="datos">
-                            <h3>offer 5</h3>
-                            <p>details offer 5</p>
-                        </div>
-                    </div>
-                    <div class="offer" data-id="offer6" onclick="openOfferDetails('offer6')">
-                        <div class="datos">
-                            <h3>offer 6</h3>
-                            <p>details offer 6</p>
-                        </div>
-                    </div>
-                    <div class="offer" data-id="offer7" onclick="openOfferDetails('offer7')">
-                        <div class="datos">
-                            <h3>offer 7</h3>
-                            <p>details offer 7</p>
-                        </div>
-                    </div>
-                    <div class="offer" data-id="offer8" onclick="openOfferDetails('offer8')">
-                        <div class="datos">
-                            <h3>offer 8</h3>
-                            <p>details offer 8</p>
-                        </div>
-                    </div>
-                    <div class="offer" data-id="offer9" onclick="openOfferDetails('offer9')">
-                        <div class="datos">
-                            <h3>offer 9</h3>
-                            <p>details offer 9</p>
+                <div class="col-md-9">
+                    <div th:each="Oferta:${Ofertas}">
+                        <div class="offer" data-id="${Oferta.id}">
+                            <h3 th:text="${Oferta.titulo_puesto}"></h3>
+                            <p th:text="${Oferta.descripcion}"></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <!-- Detalles de la oferta seleccionada -->
-                    <div id="offerDetails" style="display: none;" class="offerDetails" >
-                        <button id="closeOfferDetails" onclick="closeOfferDetails()">X</button>
-                        <h3 id="offerDetailsTitle"></h3>
-                        <p id="offerDetailsDescription"></p>
-                    </div>
+                    <div class="offerDetails" style="display: none;">
+                        <button id="closeOfferDetails">X</button>
+                        <h3></h3>
+                        <p></p>
+                    </div>     
                 </div>
             </div>
         </div>

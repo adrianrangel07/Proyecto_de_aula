@@ -1,28 +1,22 @@
-function openOfferDetails(offerId) {
-    var offerDetails = getOfferDetails(offerId);
-    document.getElementById("offerDetailsTitle").innerText = offerDetails.title;
-    document.getElementById("offerDetailsDescription").innerText = offerDetails.description;
-    document.getElementById("offerDetails").style.display = "block";
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const offers = document.querySelectorAll('.offer');
+    const offerDetails = document.querySelector('.offerDetails');
 
-function getOfferDetails(offerId) {
-    var offerElement = document.querySelector('.offer[data-id="' + offerId + '"]');
-    if (!offerElement) {
-        return {
-            title: 'Offer Not Found',
-            description: 'Details not available'
-        };
+    offers.forEach(offer => {
+        offer.addEventListener('click', function() {
+            const tituloPuesto = this.querySelector('h3').innerText;
+            const descripcion = this.querySelector('p').innerText;           
+            offerDetails.querySelector('h3').innerText = tituloPuesto;
+            offerDetails.querySelector('p').innerText = descripcion;           
+            offerDetails.style.display = 'block';
+        });
+    });
+
+    const closeOfferDetails = document.getElementById('closeOfferDetails');
+    if (closeOfferDetails) {
+        closeOfferDetails.addEventListener('click', function() {
+            offerDetails.style.display = 'none';
+        });
     }
+});
 
-    var title = offerElement.querySelector('.datos h3').innerText;
-    var description = offerElement.querySelector('.datos p').innerText;
-
-    return {
-        title: title,
-        description: description
-    };
-}
-
-function closeOfferDetails() {
-    document.getElementById("offerDetails").style.display = "none";
-}

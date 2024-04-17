@@ -1,0 +1,120 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+/* te sivre para cambiar el fondo */
+body {
+    background-color: #dceef5;
+    background-image: radial-gradient(#212d65 1px, transparent 1px), radial-gradient(#654321 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+.navbar {
+    background-color: #0a1128;
+    /* barra superior */
+}
+
+.offcanvas {
+    background-color: #0a1128;
+    /* barra de navegacion */
+}
+
+.letras {
+    color: #ffffff;
+}
+
+.dropdown-menu {
+    background-color: #001f54;
+    /* barra desplegable dentro de la barra lateral de navegacion */
+}
+
+
+.nav-rp {
+    border-radius: 8px;
+    /* el bordeado de las opciones de inicio de sesesion y registrarse */
+    width: 100%;
+}
+
+.nav-rp:hover {
+    color: #001f54;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+#logo {
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#logo:hover {
+    transform: scale(1.1);
+}
+
+.form{
+    /*barra de busqueda */
+    width: 300px;
+    background: transparent;
+    border-radius: 0;         
+    border-bottom: 1px solid #ffffff;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.form::placeholder{
+    color: #ffffff;
+}
+/* Estilos para las ofertas */
+main {
+    margin-top: 80px;
+    /* Altura del header */
+}
+
+.offer {
+    border: 2px solid #000;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #bde0fe;
+    transition: transform 0.3s;
+
+}
+
+.offer:hover {
+    background-color: #acaaaa;
+    transform: scale(1.02);
+}
+
+#offerDetails {
+    position: fixed;
+    border: 1px solid #ccc;
+    padding: 20px;
+    height: 400px;
+    overflow-y: auto;
+    width: 300px !important;
+    border: 2px solid #000;
+    border-radius: 4px;
+    background-color: #bde0fe;
+    transition: opacity 4s ease-in-out;
+
+}
+
+#offerDetails.show {
+    opacity: 300;
+}
+
+
+/* boton x en los detalles de oferts */
+#closeOfferDetails {
+    margin-top: -8px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+}
+
+#closeOfferDetails:hover {
+    background-color: #ccc;
+    color: #000;
+}

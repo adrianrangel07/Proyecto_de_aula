@@ -1,0 +1,186 @@
+* {
+    font-family: Arial, sans-serif;
+}
+
+/* te sivre para cambiar el fondo */
+body {
+    background-color: #dceef5;
+    background-image: radial-gradient(#212d65 1px, transparent 1px), radial-gradient(#654321 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+}
+
+.navbar {
+    background-color: #0a1128;
+    /* barra superior */
+}
+
+.offcanvas {
+    background-color: #0a1128;
+    /* barra de navegacion */
+}
+
+.letras {
+    color: #ffffff;
+}
+
+.dropdown-menu {
+    background-color: #001f54;
+    /* barra desplegable dentro de la barra lateral de navegacion */
+}
+
+
+.nav-rp {
+    border-radius: 8px;
+    /* el bordeado de las opciones de inicio de sesesion y registrarse */
+    width: 100%;
+}
+
+.nav-rp:hover {
+    color: #001f54;
+    background-color: #ffffff;
+    border-radius: 8px;
+}
+
+#logo {
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+#logo:hover {
+    transform: scale(1.1);
+}
+
+/*de aqui pa adelante es pura prueba*/
+
+/* Estilos generales del footer */
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0; /* Reducir el padding para hacer el footer más pequeño */
+    color: #333;
+    font-size: 14px; /* Reducir el tamaño del texto */
+    position: fixed; /* Fijar el footer en la parte inferior de la ventana */
+    bottom: 0; /* Alinear el footer en la parte inferior */
+    width: 100%; /* Asegurar que el footer ocupe todo el ancho de la ventana */
+    z-index: 1000; /* Asegurar que el footer esté por encima del contenido */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-md-6,
+.col-md-3 {
+    flex: 1;
+    margin-bottom: 10px; /* Reducir el margen inferior para hacer el contenido más compacto */
+}
+
+/* Estilos para encabezados en el footer */
+footer h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: rgb(0, 0, 0); /* Color de encabezado */
+}
+
+/* Estilos para listas en el footer */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+/* Estilos para enlaces en el footer */
+footer a {
+    color: #001fcf; /* Color de enlaces */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+footer a:hover {
+    color: #67a4e6; /* Color de enlaces al pasar el mouse */
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icons {
+    margin: 0;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons li:last-child {
+    margin-right: 0;
+}
+
+.social-icons a {
+    color: #007bff; /* Color de iconos de redes sociales */
+    font-size: 20px;
+    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.social-icons a:hover {
+    color: #0056b3; /* Color de iconos de redes sociales al pasar el mouse */
+}
+
+/* Estilos para el texto legal en el footer */
+.bottom-bar {
+    background-color: #001f54;
+    ;
+    padding: 15px 0;
+}
+
+.bottom-bar p,
+.bottom-bar ul.footer-nav {
+    margin: 0;
+}
+
+.bottom-bar ul.footer-nav li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.bottom-bar ul.footer-nav li:last-child {
+    margin-right: 0;
+}
+
+main {
+    padding-top: 50px; /* Agrega un espacio superior al contenido principal */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; /* Agrega un espacio alrededor del contenido */
+}
+
+#about-us {
+    margin-top: 50px; /* Agrega un espacio superior a la sección "Sobre Nosotros" */
+}
+
+/* Estilos para los títulos y la lista */
+#about-us h2 {
+    margin-bottom: 10px; /* Agrega un espacio inferior a los títulos */
+}
+
+#about-us ul {
+    margin-top: 10px; /* Agrega un espacio superior a la lista */
+}
+
+#about-us li {
+    margin-bottom: 5px; /* Agrega un espacio inferior a los elementos de la lista */
+}
+

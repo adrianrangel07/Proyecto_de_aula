@@ -19,7 +19,7 @@
     <header class="top-bar">
         <nav class="navbar navbar-dark  fixed-top">
             <div class="container-fluid"> <!-- barra superior-->
-                <a class="navbar-brand" href="/Inicio">
+                <a class="navbar-brand" href="/">
                     <img src="../Imagenes/wknname.png" alt="Logo" id="logo" class="logo">
                 </a>
                 <div class="barra_busqueda">
@@ -33,8 +33,9 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- de aqui para abajo barra de navegacion lateral-->
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar"
-                    aria-labelledby="offcanvasDarkNavbarLabel"> <!-- de aqui para abajo barra de navegacion lateral-->
+                    aria-labelledby="offcanvasDarkNavbarLabel"> 
                     <div class="offcanvas-header">
                         <h4 class="letras offcanvas-title" id="offcanvasDarkNavbarLabel">WORKWISE</h4>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -65,7 +66,7 @@
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="letras dropdown-item" th:href="@{/Nosotros}">Aprende con Nosotros</a>
+                                    <li><a class="letras dropdown-item" th:href="@{/Nosotros}">¿Quienes Somos?</a>
                                     </li>
                                 </ul>
                             </li>
@@ -78,7 +79,7 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <div th:each="Oferta:${Ofertas}">
                         <div class="offer" data-id="${Oferta.id}">
                             <h3 th:text="${Oferta.titulo_puesto}"></h3>
@@ -86,7 +87,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="offerDetails" style="display: none;">
                         <button id="closeOfferDetails">X</button>
                         <h3></h3>

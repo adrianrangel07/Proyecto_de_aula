@@ -19,16 +19,23 @@
     <header class="top-bar">
         <nav class="navbar navbar-dark  fixed-top">
             <div class="container-fluid"> <!-- barra superior-->
-                <a class="navbar-brand" href="/Inicio">
+                <a class="navbar-brand" th:href="@{/login_inicio}">
                     <img src="../Imagenes/wknname.png" alt="Logo" id="logo" class="logo">
                 </a>
+                <div class="barra_busqueda">
+                    <form class="d-flex" role="search">
+                        <input class="form form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- de aqui para abajo barra de navegacion lateral-->
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar"
-                    aria-labelledby="offcanvasDarkNavbarLabel"> <!-- de aqui para abajo barra de navegacion lateral-->
+                    aria-labelledby="offcanvasDarkNavbarLabel"> 
                     <div class="offcanvas-header">
                         <h5 class="letras offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -37,7 +44,7 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/Inicio}">Cerrar Sesión</a>
+                                <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/}">Cerrar Sesión</a>
                             </li>
                             <li class="nav-item">
                                 <a class="letras nav-rp nav-link " aria-current="page" href="#">Mi perfil</a>
@@ -71,28 +78,20 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-9">
-                    <!-- Ofertas -->
-                    <div class="offer" onclick="openOfferDetails('offer1')">
-                        <h3>Offer 1</h3>
-                        <p>Description of offer 1</p>
-                    </div>
-                    <div class="offer" onclick="openOfferDetails('offer2')">
-                        <h3>Offer 2</h3>
-                        <p>Description of offer 2</p>
-                    </div>
-                    <div class="offer" onclick="openOfferDetails('offer3')">
-                        <h3>Offer 3</h3>
-                        <p>Description of offer 3</p>
+                <div class="col-md-8">
+                    <div th:each="Oferta:${Ofertas}">
+                        <div class="offer" data-id="${Oferta.id}">
+                            <h3 th:text="${Oferta.titulo_puesto}"></h3>
+                            <p th:text="${Oferta.descripcion}"></p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <!-- Detalles de la oferta seleccionada -->
-                    <div id="offerDetails" style="display: none;" class="offerDetails">
-                        <button id="closeOfferDetails" onclick="closeOfferDetails()">Cerrar</button>
-                        <h3 id="offerDetailsTitle"></h3>
-                        <p id="offerDetailsDescription"></p>
-                    </div>
+                <div class="col-md-4">
+                    <div class="offerDetails" style="display: none;">
+                        <button id="closeOfferDetails">X</button>
+                        <h3></h3>
+                        <p></p>
+                    </div>     
                 </div>
             </div>
         </div>

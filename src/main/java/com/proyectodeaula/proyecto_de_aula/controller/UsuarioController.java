@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+
 import com.proyectodeaula.proyecto_de_aula.interfaceService.IpersonaService;
 import com.proyectodeaula.proyecto_de_aula.interfaces.Interfaz_user;
 import com.proyectodeaula.proyecto_de_aula.model.Usuario;
@@ -22,37 +23,33 @@ public class UsuarioController {
 	private IpersonaService service;
 
 	@Autowired
-	private Interfaz_user user; 
+	private Interfaz_user user;
 
 	@GetMapping("/Home")
-	public String listar(Model model){
-		List <Usuario> Usuarios=service.listar();
+	public String listar(Model model) {
+		List<Usuario> Usuarios = service.listar();
 		model.addAttribute("Usuarios", Usuarios);
 		return "html/Inicio";
 	}
 
 	@GetMapping("/registrar_usuario")
-	public String agregar(Model model){
+	public String agregar(Model model) {
 		model.addAttribute("Usuario", new Usuario());
 		return "html/Registrar_persona";
 	}
 
-	@PostMapping("/Inicio")
-	public String save(@Validated Usuario U, Model model){
+	@PostMapping("/login_persona")
+	public String save(@Validated Usuario U, Model model) {
 		service.save(U);
-		return "html/Inicio";
+		return "html/login_persona";
 	}
-
-	@GetMapping("/Inicio")
-	public String Home() {
-		return "html/Inicio"; // Devuelve la vista de inicio
-	}
-
+	//llamar a login persona, para que inicie  sesion 
 	@GetMapping("/login_persona")
 	private String iniciar_sesion() { // Devuelve la vista iniciar sesion
 		return "html/login_persona";
 	}
 
+	// inicio de sesion, validacion de datos y redireccionamiendo de pagina 
 	@PostMapping("/login_inicio")
 	public String iniciarSesion(Model model, @RequestParam String email, @RequestParam String contraseña) {
 		// Buscar al usuario en la base de datos por su email y contraseña
@@ -61,25 +58,28 @@ public class UsuarioController {
 			// Si el usuario existe, puedes redirigir a la página Inicio_login.html
 			return "html/Inicio_login";
 		} else {
-			// Si el usuario no existe o las credenciales son incorrectas, puedes agregar un mensaje de error y volver al formulario de inicio de sesión
+			// Si el usuario no existe o las credenciales son incorrectas, puedes agregar un
+			// mensaje de error y volver al formulario de inicio de sesión
 			model.addAttribute("error", "Credenciales incorrectas");
 			return "html/login_persona";
 		}
 	}
 
+	//llamar a inicio login (inicio de cuando inician sesion usuarios)
+	
+
 	@GetMapping("/Inicio_Sesion_Empresa")
 	public String login_empresa() {
 		return "html/Login_empresa"; // Devuelve la vista de inicio
 	}
-	
+
 	@GetMapping("/registro_empresa")
-	public String registro_emp(){
+	public String registro_emp() {
 		return "html/Registrar_empresa";
 	}
 
 	@GetMapping("/Nosotros")
-	public String Nosotros(){
+	public String Nosotros() {
 		return "html/Nosotros";
 	}
 }
-

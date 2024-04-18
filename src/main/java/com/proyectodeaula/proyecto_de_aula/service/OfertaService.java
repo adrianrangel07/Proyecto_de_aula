@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.proyectodeaula.proyecto_de_aula.interfaceService.IofertaService;
 import com.proyectodeaula.proyecto_de_aula.interfaces.Interfaz_ofertas;
+import com.proyectodeaula.proyecto_de_aula.interfaces.Interfaz_ofertas_buscar;
 import com.proyectodeaula.proyecto_de_aula.model.Ofertas;
 
 @Service
@@ -15,6 +16,9 @@ public class OfertaService implements IofertaService{
 
     @Autowired
     private Interfaz_ofertas oferr;
+
+    @Autowired
+    private Interfaz_ofertas_buscar offer_buscar;
 
     @Override
     public List<Ofertas> listar_ofertas() {
@@ -40,6 +44,10 @@ public class OfertaService implements IofertaService{
     @Override
     public void delete(int Id) {
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    }
+
+    public List<Ofertas> buscarOfertasPorTermino(String termino) {
+        return offer_buscar.findByTituloPuestoContaining(termino);
     }
 
 }

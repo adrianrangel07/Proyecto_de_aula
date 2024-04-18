@@ -23,8 +23,9 @@
                     <img src="../Imagenes/wknname.png" alt="Logo" id="logo" class="logo">
                 </a>
                 <div class="barra_busqueda">
-                    <form class="d-flex" role="search">
-                        <input class="form form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex" role="search" id="formBusqueda">
+                        <input class="form form-control me-2" type="search" id="termino" name="termino"
+                            placeholder="Buscar ofertas..." aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
@@ -35,7 +36,7 @@
                 </button>
                 <!-- de aqui para abajo barra de navegacion lateral-->
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar"
-                    aria-labelledby="offcanvasDarkNavbarLabel"> 
+                    aria-labelledby="offcanvasDarkNavbarLabel">
                     <div class="offcanvas-header">
                         <h4 class="letras offcanvas-title" id="offcanvasDarkNavbarLabel">WORKWISE</h4>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -75,33 +76,29 @@
                 </div>
             </div>
         </nav>
-    </header>
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div th:each="Oferta:${Ofertas}">
-                        <div class="offer" data-id="${Oferta.id}">
-                            <h3 th:text="${Oferta.titulo_puesto}"></h3>
-                            <p th:text="${Oferta.descripcion}"></p>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div id="resultadoBusqueda"></div>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <div class="offerDetails" style="display: none;">
+                            <button id="closeOfferDetails">X</button>
+                            <h3></h3>
+                            <p></p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="offerDetails" style="display: none;">
-                        <button id="closeOfferDetails">X</button>
-                        <h3></h3>
-                        <p></p>
-                    </div>     
-                </div>
             </div>
-        </div>
-    </main>
-    <footer>
+        </main>
+        <footer>
 
-    </footer>
-    <!-- Script de JavaScript -->
-    <script src="../js/Inicio.js"></script>
+        </footer>
+        <!-- Script de JavaScript -->
+        <script src="../js/Inicio.js"></script>
+
 </body>
 
 </html>

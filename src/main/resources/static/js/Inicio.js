@@ -20,7 +20,8 @@
             });
         }
     });
-
+    
+    //filtro de busqueda
     document.getElementById('formBusqueda').addEventListener('submit', function(event) {
         event.preventDefault();
         var termino = document.getElementById('termino').value;
@@ -41,4 +42,3 @@
                 });
             });
     }
-

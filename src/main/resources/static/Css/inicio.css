@@ -1,14 +1,16 @@
+
+
 * {
     font-family: Arial, sans-serif;
 }
 
-/* te sivre para cambiar el fondo */
+/* te sivre para cambiar el fondo
 body {
     background-color: #dceef5;
     background-image: radial-gradient(#212d65 1px, transparent 1px), radial-gradient(#654321 1px, transparent 1px);
     background-size: 40px 40px;
     background-position: 0 0, 20px 20px;
-}
+} */
 
 .navbar {
     background-color: #0a1128;
@@ -116,8 +118,3 @@ main {
     color: #000;
 } 
 
-body { 
-
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-    
-  }

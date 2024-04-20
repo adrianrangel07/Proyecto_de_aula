@@ -42,3 +42,21 @@
                 });
             });
     }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const offerDetails = document.querySelector('.offerDetails');
+        const resultadoBusqueda = document.getElementById('resultadoBusqueda');
+      
+        resultadoBusqueda.addEventListener('click', function(event) {
+          if (event.target.classList.contains('offer')) { // Check if clicked element is an offer
+            const tituloPuesto = event.target.querySelector('h3').innerText;
+            const descripcion = event.target.querySelector('p').innerText;
+            offerDetails.querySelector('h3').innerText = tituloPuesto;
+            offerDetails.querySelector('p').innerText = descripcion;
+            offerDetails.style.display = 'block';
+          }
+        });
+    })
+
+
+    

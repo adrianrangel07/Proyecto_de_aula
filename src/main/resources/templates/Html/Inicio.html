@@ -16,18 +16,19 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.39.0/css-doodle.min.js"></script>
 </head>
 
+<input type="text">
 <body>
     <header class="top-bar">
         <nav class="navbar navbar-dark  fixed-top">
             <div class="container-fluid"> <!-- barra superior-->
                 <a class="navbar-brand" href="/">
                     <img src="../Imagenes/wknname.png" alt="Logo" id="logo" class="logo">
-                </a>
-                <div class="barra_busqueda" >
-                    <form class="d-flex" role="search" id="formBusqueda"  >
+                </a>              
+                <div class="barra_busqueda" id="formBusqueda" >
+                    <form class="d-flex" role="search" >
                         <input class="form form-control me-2" type="search" id="termino" name="termino"
-                            placeholder="Buscar ofertas..." aria-label="Search" data-id="${Oferta.id}">
-                        <button class="btn btn-outline-success" type="submit" >Search</button>
+                            placeholder="Buscar ofertas..." aria-label="Search">                           
+                            <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -79,6 +80,7 @@
         </nav>
         <main>
             <div class="container">
+                
                 <div class="row">
                     <div class="col-md-8">
                         <div id="resultadoBusqueda">
@@ -89,14 +91,15 @@
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                     <div class="col-md-4">
-                        <div class="offerDetails" style="display: none;">
-                            <button id="closeOfferDetails">X</button>
-                            <h3></h3>
-                            <p></p>
-                        </div>
+                        
+                            <div class="offerDetails" style="display: none;">
+                                <button id="closeOfferDetails">X</button>
+                                <h3></h3>
+                                <p></p>
+                            </div>
+                       
                     </div>
                 </div>
             </div>

@@ -55,6 +55,7 @@ public class UsuarioController {
 		// Buscar al usuario en la base de datos por su email y contraseña
 		Usuario usuario = user.findByEmailAndContraseña(email, contraseña);
 		if (usuario != null) {
+			model.addAttribute("nombreUsuario", usuario.getNombrePer());
 			// Si el usuario existe, puedes redirigir a la página Inicio_login.html
 			return "html/Inicio_login";
 		} else {

@@ -35,7 +35,7 @@
                 </button>
                 <!-- de aqui para abajo barra de navegacion lateral-->
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar"
-                    aria-labelledby="offcanvasDarkNavbarLabel"> 
+                    aria-labelledby="offcanvasDarkNavbarLabel">
                     <div class="offcanvas-header">
                         <h5 class="letras offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
                         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -91,7 +91,7 @@
                         <button id="closeOfferDetails">X</button>
                         <h3></h3>
                         <p></p>
-                    </div>     
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,11 +102,14 @@
     <script src="../js/Inicio.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+
+        var nombreUsuario = "[[${nombreUsuario}]]";
+
         Swal.fire({
-            icon : "success",
-            title: "Bienvenido",
+            icon: "success",
+            title: "Bienvenido, " + nombreUsuario,
             showConfirmButton: false,
-            backdrop: true ,
+            backdrop: true,
             timer: 3000,
             timerProgressBar: true,
             position: "center",

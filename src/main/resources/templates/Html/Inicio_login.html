@@ -22,12 +22,13 @@
                 <a class="navbar-brand" th:href="@{/login_inicio}">
                     <img src="../Imagenes/wknname.png" alt="Logo" id="logo" class="logo">
                 </a>
-                <div class="barra_busqueda">
+                <div class="barra_busqueda" id="formBusqueda">
                     <form class="d-flex" role="search">
-                        <input class="form form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form form-control me-2" type="search" id="termino" name="termino" placeholder="Buscar ofertas..." aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                     aria-label="Toggle navigation">
@@ -77,21 +78,26 @@
     </header>
     <main>
         <div class="container">
+
             <div class="row">
                 <div class="col-md-8">
-                    <div th:each="Oferta:${Ofertas}">
-                        <div class="offer" data-id="${Oferta.id}">
-                            <h3 th:text="${Oferta.titulo_puesto}"></h3>
-                            <p th:text="${Oferta.descripcion}"></p>
+                    <div id="resultadoBusqueda">
+                        <div th:each="Oferta:${Ofertas}">
+                            <div class="offer" data-id="${Oferta.id}">
+                                <h3 th:text="${Oferta.titulo_puesto}"></h3>
+                                <p th:text="${Oferta.descripcion}"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
+
                     <div class="offerDetails" style="display: none;">
                         <button id="closeOfferDetails">X</button>
                         <h3></h3>
                         <p></p>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -101,22 +107,26 @@
     </footer>
     <script src="../js/Inicio.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
     <script>
-
+        document.addEventListener("DOMContentLoaded", function() {
         var nombreUsuario = "[[${nombreUsuario}]]";
 
-        Swal.fire({
-            icon: "success",
-            title: "Bienvenido, " + nombreUsuario,
-            showConfirmButton: false,
-            backdrop: true,
-            timer: 3000,
-            timerProgressBar: true,
-            position: "center",
-            with: "30%",
-            padding: "1 rem",
-            toast: true,
-        })
+        if (nombreUsuario) {
+            Swal.fire({
+                icon: "success",
+                title: "Bienvenido, " + nombreUsuario,
+                showConfirmButton: false,
+                backdrop: true,
+                timer: 3000,
+                timerProgressBar: true,
+                position: "center",
+                with: "30%",
+                padding: "1 rem",
+                toast: true,
+            });
+        }
+    });
     </script>
 </body>
 

@@ -4,7 +4,7 @@
     font-family: Arial, sans-serif;
 }
 
-te sivre para cambiar el fondo
+/* te sivre para cambiar el fondo */
 body {
     background-color: #dceef5;
     background-image: radial-gradient(#212d65 1px, transparent 1px), radial-gradient(#654321 1px, transparent 1px);
@@ -90,20 +90,19 @@ main {
     transform: scale(1.02);
 }
 
-
-
 /* estilo de la seccion detalles de la ofertas */
  .offerDetails {
     position: fixed;
     border: 2px solid #000;
     padding: 20px;
     min-height: 400px;
+    max-height: 600px;
     overflow-y: auto;
     width: 400px;                             /* ancho de la oferta */
     border-radius: 4px;
     background-color: #bde0fe;
     transition: opacity 0.4s ease-in-out;
-   
+    
 }
 
 /* boton x en los detalles de oferts */
@@ -116,5 +115,8 @@ main {
 #closeOfferDetails:hover {
     background-color: #ccc;
     color: #000;
-} 
+}
+
+
+
 

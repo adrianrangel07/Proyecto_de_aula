@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const periodoElement = clickedOffer.querySelector('.periodo span');
             const tipoEmpleoElement = clickedOffer.querySelector('.tipo_empleo span');
 
-            const salario = salarioElement ? salarioElement.innerText : '';
-            const duracion = duracionElement ? duracionElement.innerText : '';
-            const periodo = periodoElement ? periodoElement.innerText : '';
-            const tipoEmpleo = tipoEmpleoElement ? tipoEmpleoElement.innerText : '';
+            const salario = salarioElement ? salarioElement.innerText : 'No hay información disponible';
+            const duracion = duracionElement ? duracionElement.innerText : 'No hay información disponible';
+            const periodo = periodoElement ? periodoElement.innerText : 'No hay información disponible';
+            const tipoEmpleo = tipoEmpleoElement ? tipoEmpleoElement.innerText : 'No hay información disponible';
 
             offerDetails.style.display = 'block';
             offerDetails.querySelector('h3').innerText = tituloPuesto;

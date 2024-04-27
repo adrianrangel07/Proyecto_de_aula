@@ -89,8 +89,10 @@
                                 <div class="offer" data-id="${Oferta.id}">
                                     <h3 th:text="${Oferta.titulo_puesto}"></h3>
                                     <p th:text="${Oferta.descripcion}"></p>
-                                    <p class="salario">Salario: <span th:text="${Oferta.salario}"></span></p>
-
+                                    <p style="display: none;" class="salario"><span th:text="${Oferta.salario}"></span></p>
+                                    <p style="display: none;" class="duracion"><span th:text="${Oferta.duracion}"></span></p>
+                                    <p style="display: none;" class="periodo"><span th:text="${Oferta.periodo}"></span></p>
+                                    <p style="display: none;" class="tipo_empleo"><span th:text="${Oferta.tipo_empleo}"></span></p>
                                 </div>
                             </div>
                         </div>
@@ -100,10 +102,10 @@
                             <button id="closeOfferDetails">X</button>
                             <h3></h3>
                             <p></p>
-                            <p class="salario">Salario: <span class="salarioSpan"></span></p>
-                            <p class="duracion">Duración: <span class="duracionSpan"></span></p>
-                            <p class="periodo">Período: <span class="periodoSpan"></span></p>
-                            <p class="tipo_empleo">Tipo de empleo: <span class="tipo_empleoSpan"></span></p>
+                            <p>Salario: <span class="salarioSpan"></span></p>
+                            <p>Duración: <span class="duracionSpan"></span></p>
+                            <p>Período: <span class="periodoSpan"></span></p>
+                            <p>Tipo de empleo: <span class="tipo_empleoSpan"></span></p>
                         </div>
                     </div>
 

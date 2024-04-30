@@ -62,7 +62,7 @@ public class UsuarioController {
 			// Si el usuario no existe o las credenciales son incorrectas, puedes agregar un
 			// mensaje de error y volver al formulario de inicio de sesión
 			model.addAttribute("error", "Credenciales incorrectas");
-			return "html/contraseña_incorrecta";
+			return "html/contraseña_incorrectauser";
 		}
 	}
 
@@ -74,19 +74,16 @@ public class UsuarioController {
 		return "html/Login_empresa"; // Devuelve la vista de inicio
 	}
 
-	@GetMapping("/registro_empresa")
-	public String registro_emp() {
-		return "html/Registrar_empresa";
-	}
+	
 
 	@GetMapping("/Nosotros")
 	public String Nosotros() {
 		return "html/Nosotros";
 	}
 
-	@GetMapping("/contraseña_incorrecta")
+	@GetMapping("/contraseña_incorrectauser")
 	public String contraseña_incorrecta() {
-		return "html/contraseña_incorrecta";
+		return "html/contraseña_incorrectauser";
 	}
 
 }

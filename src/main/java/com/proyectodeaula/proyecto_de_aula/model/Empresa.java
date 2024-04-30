@@ -17,49 +17,79 @@ public class Empresa {
 	String nombreEmp;
     String direccion;
     String descripcion;
-    String Email;
-    int contraseña;
-    int repetirContraseña;
+    String email;
+    String contraseña;
+    String repetirContraseña;
     
     public Empresa () {
     }
-    
+
+	public Empresa(int id, String nombreEmp, String direccion, String descripcion ,String email, String contraseña, String repetirContraseña) {
+		this.id = id;
+		this.nombreEmp = nombreEmp;
+		this.direccion = direccion;
+		this.descripcion = descripcion;
+		this.email = email;
+		this.contraseña = contraseña;
+		this.repetirContraseña = repetirContraseña;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getNombreEmp() {
 		return nombreEmp;
 	}
+
 	public void setNombreEmp(String nombreEmp) {
 		this.nombreEmp = nombreEmp;
 	}
+
 	public String getDireccion() {
 		return direccion;
 	}
+
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+
 	public String getDescripcion() {
 		return descripcion;
 	}
+
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-	public String getEmail() {
-		return Email;
+
+	public String getemail() {
+		return email;
 	}
-	public void setEmail(String email) {
-		Email = email;
+
+	public void setemail(String email) {
+		this.email = email;
 	}
-	public int getContraseña() {
+
+	public String getContraseña() {
 		return contraseña;
 	}
-	public void setContraseña(int contraseña) {
+
+	public void setContraseña(String contraseña) {
 		this.contraseña = contraseña;
 	}
-	public int getRepetirContraseña() {
+
+	public String getRepetirContraseña() {
 		return repetirContraseña;
 	}
-	public void setRepetirContraseña(int repetirContraseña) {
+
+	public void setRepetirContraseña(String repetirContraseña) {
 		this.repetirContraseña = repetirContraseña;
 	}
     
+	
     
 }

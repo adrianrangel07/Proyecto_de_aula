@@ -61,7 +61,7 @@
             </div>
             <ul class="nav-menu">
                 <li class="nav-menu-item">
-                    <a th:href="@{/registrar_empresa}">Registrarse</a>
+                    <a th:href="@{/registro_empresa}">Registrarse</a>
                 </li>
                 <li class="nav-menu-item">
                     <a th:href="@{/login_persona}">Usuario</a>
@@ -75,7 +75,7 @@
                 <img src="../imagenes/Logo_empresa.png" alt="Imagen de encabezado">
             </div>
             <h1>Iniciar Sesión</h1>
-            <form th:action="@{/InicioEmp}" th:object="${Empresa}" method="POST">
+            <form>
                 <input type="email" placeholder="Correo electrónico" required>
                 <div class="password-field">
                     <input type="password" id="password" placeholder="Contraseña" required>
@@ -83,7 +83,7 @@
                         <i id="eye-icon" class="far fa-eye"></i>
                     </span>
                 </div>
-                <button type="submit" id="validar" onclick="validar">Ingresar</button>
+                <button type="submit">Ingresar</button>
             </form>
             <p class="contraseña_olvidada"><a href="contraseña_olvidada_emp.html">¿Olvidaste tu contraseña?</a></p>
         </div>
@@ -105,9 +105,6 @@
             }
         }
     </script>
-    <div id="loaderContainer" class="loader-container">
-        <div id="loader" class="loader"></div>
-    </div>
     <script src="../js/carga.js"></script>
 </body>
 

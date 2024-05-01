@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.List;
+// import java.util.List;
 
 import com.proyectodeaula.proyecto_de_aula.interfaceService.IpersonaService;
 import com.proyectodeaula.proyecto_de_aula.interfaces.Interfaz_user;
@@ -25,12 +25,12 @@ public class UsuarioController {
 	@Autowired
 	private Interfaz_user user;
 
-	@GetMapping("/Home")
-	public String listar(Model model) {
-		List<Usuario> Usuarios = service.listar();
-		model.addAttribute("Usuarios", Usuarios);
-		return "html/Inicio";
-	}
+	// @GetMapping("/Home")
+	// public String listar(Model model) {
+	// 	List<Usuario> Usuarios = service.listar();
+	// 	model.addAttribute("Usuarios", Usuarios);
+	// 	return "html/Inicio";
+	// }
 
 	@GetMapping("/registrar_usuario")
 	public String agregar(Model model) {
@@ -67,14 +67,6 @@ public class UsuarioController {
 	}
 
 	//llamar a inicio login (inicio de cuando inician sesion usuarios)
-	
-
-	@GetMapping("/Inicio_Sesion_Empresa")
-	public String login_empresa() {
-		return "html/Login_empresa"; // Devuelve la vista de inicio
-	}
-
-	
 
 	@GetMapping("/Nosotros")
 	public String Nosotros() {

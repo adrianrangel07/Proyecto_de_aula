@@ -86,7 +86,7 @@
                 </div>
             </div>
         </nav>
-    </header>    
+    </header>
     <main>
         <div class="container">
 
@@ -99,8 +99,8 @@
                                 <p th:text="${Oferta.descripcion}"></p>
                                 <p style="display: none;" class="salario"><span th:text="${Oferta.salario}"></span>
                                 </p>
-                                <p style="display: none;" class="duracion"><span
-                                        th:text="${Oferta.duracion}"></span></p>
+                                <p style="display: none;" class="duracion"><span th:text="${Oferta.duracion}"></span>
+                                </p>
                                 <p style="display: none;" class="periodo"><span th:text="${Oferta.periodo}"></span>
                                 </p>
                                 <p style="display: none;" class="tipo_empleo"><span
@@ -126,48 +126,50 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="contacto">
-                        <h5>Contacto</h5>
-                        <p>info@Workwise.com</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="link">
-                        <h5>Links</h5>
-                        <ul>
-                            <li><a th:href="@{/}">Inicio</a></li>
-                            <li><a th:href="@{/registrar_usuario}">Registrate</a></li>
-                            <li><a th:href="@{/login_persona}">Iniciar sesion</a></li>
-                            <li><a th:href="@{/Nosotros}">Nosotros</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col">
-                    <h5>Redes</h5>
-                    <div class="redes">
-                        <div class="facebook">
-                            <a class="facebook" href="https://www.facebook.com/profile.php?id=61558650706843"
-                                target="_blank">
-                                <img class="facebook"
-                                    src="https://faldin.com/wp-content/uploads/2018/01/logo-facebook.png"
-                                    alt="facebook">
-                            </a>
+            <div class="sticky-lg-bottom">
+                <div class="row">
+                    <div class="col">
+                        <div class="contacto">
+                            <h5>Contacto</h5>
+                            <p>info@Workwise.com</p>
                         </div>
-                        <div class="instagram">
-                            <a class="instagram" href="https://www.instagram.com/work_wise.0.1/" target="_blank">
-                                <img class="instagram"
-                                    src="https://i.pinimg.com/474x/c9/b3/8a/c9b38a8d631adbe618fe1a6dbc353050.jpg"
-                                    alt="instagram">
-                            </a>
+                    </div>
+                    <div class="col">
+                        <div class="link">
+                            <h5>Links</h5>
+                            <ul>
+                                <li><a th:href="@{/}">Inicio</a></li>
+                                <li><a th:href="@{/registrar_usuario}">Registrate</a></li>
+                                <li><a th:href="@{/login_persona}">Iniciar sesion</a></li>
+                                <li><a th:href="@{/Nosotros}">Nosotros</a></li>
+                            </ul>
                         </div>
-                        <div class="twitter">
-                            <a class="twitter" href="https://www.tiktok.com/@work_wise?lang=es" target="_blank">
-                                <img class="twitter"
-                                    src="https://seeklogo.com/images/T/tiktok-logo-B9AC5FE794-seeklogo.com.png"
-                                    alt="twitter">
-                            </a>
+                    </div>
+                    <div class="col">
+                        <h5>Redes</h5>
+                        <div class="redes">
+                            <div class="facebook">
+                                <a class="facebook" href="https://www.facebook.com/profile.php?id=61558650706843"
+                                    target="_blank">
+                                    <img class="facebook"
+                                        src="https://faldin.com/wp-content/uploads/2018/01/logo-facebook.png"
+                                        alt="facebook">
+                                </a>
+                            </div>
+                            <div class="instagram">
+                                <a class="instagram" href="https://www.instagram.com/work_wise.0.1/" target="_blank">
+                                    <img class="instagram"
+                                        src="https://i.pinimg.com/474x/c9/b3/8a/c9b38a8d631adbe618fe1a6dbc353050.jpg"
+                                        alt="instagram">
+                                </a>
+                            </div>
+                            <div class="twitter">
+                                <a class="twitter" href="https://www.tiktok.com/@work_wise?lang=es" target="_blank">
+                                    <img class="twitter"
+                                        src="https://seeklogo.com/images/T/tiktok-logo-B9AC5FE794-seeklogo.com.png"
+                                        alt="twitter">
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -175,8 +177,8 @@
         </div>
     </footer>
 
-        <!-- Script de JavaScript -->
-        <script src="../js/Inicio.js"></script>
+    <!-- Script de JavaScript -->
+    <script src="../js/Inicio.js"></script>
 
 </body>
 

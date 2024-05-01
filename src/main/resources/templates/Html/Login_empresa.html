@@ -36,10 +36,10 @@
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
                             <a class="letras nav-rp nav-link " aria-current="page"
-                                th:href="@{/registro_empresa}">Registrarse</a>
+                                th:href="@{/registrar_empresa}">Registrarse</a>
                         </li>
                         <li class="nav-item">
-                            <a class="letras nav-rp nav-link" href="login_persona.html">Usuario</a>
+                            <a class="letras nav-rp nav-link" th:href="@{/login_persona}">Usuario</a>
                         </li>
                         <li class="nav-item dropdown"> <!-- barra desplagable dentro de la barrra lateral-->
                             <a class="letras nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -75,10 +75,10 @@
                 <img src="../imagenes/Logo_empresa.png" alt="Imagen de encabezado">
             </div>
             <h1>Iniciar Sesión</h1>
-            <form th:action="@{/InicioEmp}" th:object="${Empresa}" method="POST">
-                <input type="email" placeholder="Correo electrónico" required>
+            <form th:action="@{/Login_Empresa/inicio}" th:object="${Empresa}" method="POST">
+                <input name="email" type="email" placeholder="Correo electrónico" required>
                 <div class="password-field">
-                    <input type="password" id="password" placeholder="Contraseña" required>
+                    <input name=contraseña type="password" id="password" placeholder="Contraseña" required>
                     <span class="toggle-password" onclick="togglePasswordVisibility()">
                         <i id="eye-icon" class="far fa-eye"></i>
                     </span>
@@ -105,9 +105,6 @@
             }
         }
     </script>
-    <div id="loaderContainer" class="loader-container">
-        <div id="loader" class="loader"></div>
-    </div>
     <script src="../js/carga.js"></script>
 </body>
 

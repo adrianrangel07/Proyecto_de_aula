@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -27,14 +27,13 @@
     <main>
         <div class="register-form">
             <h1>REGISTRARSE</h1>
-            <form>
-                <input type="text" placeholder="Nombre de la empresa" required>
-                <input type="text" placeholder="Dueño de la empresa" required>
-                <input type="text" placeholder="NIT" required>
-                <input type="email" placeholder="Correo electrónico" required>
-                <input type="text" placeholder="Dirección" required>
-                <input type="password" placeholder="Contraseña" required>
-                <input type="password" placeholder="Confirmar Contraseña" required>
+            <form th:action="@{/login_empresa}" th:object="${Empresa}" method="post">
+                <input th:field="*{nombreEmp}" type="text" placeholder="Nombre de la empresa" required>
+                <input th:field="*{descripcion}" type="text" placeholder="NIT" required>
+                <input th:field="*{email}" type="email" placeholder="Correo electrónico" required>
+                <input th:field="*{direccion}"type="text" placeholder="Dirección" required>
+                <input th:field="*{contraseña}" type="password" placeholder="Contraseña" required>
+                <input th:field="*{repetirContraseña}" type="password" placeholder="Confirmar Contraseña" required>
                 <button type="submit">Registrarse</button>
             </form>
         </div>

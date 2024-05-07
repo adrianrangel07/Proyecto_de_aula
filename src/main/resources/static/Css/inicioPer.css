@@ -14,6 +14,7 @@ body {
 
 .navbar {
     background-color: #0a1128;
+    position: sticky;
     /* barra superior */
 }
 
@@ -91,10 +92,6 @@ body {
 }
 
 /* Estilos para las ofertas */
-main {
-    margin-top: 80px;
-    /* Altura del header */
-}
 
 .offer {
     border: 2px solid #000;
@@ -141,17 +138,22 @@ main {
 }
 
 /* footer */
-
 .footer {
     background-color: #f8f9fa;
     padding: 20px;
     text-align: center;
-    position: relative;
     bottom: 0;
-    left: 0;
+    left: 0; /* Ajustado a 0 */
     width: 100%; /* Ajuste para el ancho del footer */
     box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Añade sombra al footer */
     border-top: 1px solid #ccc; /* Añade borde superior */
+    
+}
+
+/* Ajuste de la altura del contenido para evitar que se solape con el footer */
+main {
+    margin-top: 80px; /* Altura del header */
+    margin-bottom: 100px; /* Altura del footer */
 }
 
 .footer ul {

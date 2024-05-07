@@ -16,8 +16,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.39.0/css-doodle.min.js"></script>
 </head>
 
-<input type="text">
-
 <body>
     <header class="top-bar">
         <nav class="navbar navbar-dark  fixed-top">
@@ -56,7 +54,7 @@
                                     SESIÓN </a>
                             </li>
                             <li class="nav-item">
-                                <a class="letras nav-rp nav-link" th:href="@{/registrar_usuario}">REGISTRARSE</a>
+                                <a class="letras nav-rp nav-link" th:href="@{/registrar_persona}">REGISTRARSE</a>
                             </li>
                             <li class="nav-item dropdown"> <!-- barra desplagable dentro de la barrra lateral-->
                                 <a class="letras nav-link dropdown-toggle" href="#" role="button"
@@ -65,7 +63,7 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="letras dropdown-item" href="#">Estadisticas</a></li>
-                                    <li><a class="letras dropdown-item" th:href="@{/Inicio_Sesion_Empresa}">Empresa</a>
+                                    <li><a class="letras dropdown-item" th:href="@{/login_empresa}">Empresa</a>
                                     </li>
                                     <li>
                                         <hr class="dropdown-divider">
@@ -89,7 +87,6 @@
     </header>
     <main>
         <div class="container">
-
             <div class="row">
                 <div class="col-md-8">
                     <div id="resultadoBusqueda">
@@ -110,18 +107,21 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="offerDetails" style="display: none;">
-                        <button id="closeOfferDetails">X</button>
-                        <h3></h3>
-                        <p></p>
-                        <p>Salario: <span class="salarioSpan"></span></p>
-                        <p>Duración: <span class="duracionSpan"></span></p>
-                        <p>Período: <span class="periodoSpan"></span></p>
-                        <p>Tipo de empleo: <span class="tipo_empleoSpan"></span></p>
+                    <div class="container">
+                        <div class="offerDetails" style="display: none;">
+                            <button id="closeOfferDetails">X</button>
+                            <h3></h3>
+                            <p></p>
+                            <p>Salario: <span class="salarioSpan"></span></p>
+                            <p>Duración: <span class="duracionSpan"></span></p>
+                            <p>Período: <span class="periodoSpan"></span></p>
+                            <p>Tipo de empleo: <span class="tipo_empleoSpan"></span></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </main>
 
     <footer class="footer">
@@ -139,7 +139,7 @@
                             <h5>Links</h5>
                             <ul>
                                 <li><a th:href="@{/}">Inicio</a></li>
-                                <li><a th:href="@{/registrar_usuario}">Registrate</a></li>
+                                <li><a th:href="@{/registrar_persona}">Registrate</a></li>
                                 <li><a th:href="@{/login_persona}">Iniciar sesion</a></li>
                                 <li><a th:href="@{/Nosotros}">Nosotros</a></li>
                             </ul>

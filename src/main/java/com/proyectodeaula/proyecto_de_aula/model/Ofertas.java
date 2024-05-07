@@ -19,6 +19,7 @@ public class Ofertas {
     String tipo_empleo;
     int salario;
     String periodo;
+    
 
     public Ofertas(){
     }

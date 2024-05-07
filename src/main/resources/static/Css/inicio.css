@@ -10,8 +10,8 @@ body {
     background-image: radial-gradient(#212d65 1px, transparent 1px), radial-gradient(#654321 1px, transparent 1px);
     background-size: 40px 40px;
     background-position: 0 0, 20px 20px;
-}
 
+}
 .navbar {
     background-color: #0a1128;
     /* barra superior */
@@ -90,12 +90,6 @@ body {
     display: none;
 }
 
-/* Estilos para las ofertas */
-main {
-    margin-top: 80px;
-    /* Altura del header */
-}
-
 .offer {
     border: 2px solid #000;
     border-radius: 4px;
@@ -114,18 +108,17 @@ main {
 }
 
 /* estilo de la seccion detalles de la ofertas */
- .offerDetails {
+.offerDetails {
     position: fixed;
     border: 2px solid #000;
     padding: 20px;
     min-height: 400px;
-    max-height: 600px;
+    max-height: 300px;
     overflow-y: auto;
-    width: 400px;                             /* ancho de la oferta */
+    width: 400px; /* ancho de la oferta */
     border-radius: 4px;
     background-color: #bde0fe;
     transition: opacity 0.4s ease-in-out;
-    
 }
 
 /* boton x en los detalles de oferts */
@@ -146,13 +139,21 @@ main {
     background-color: #f8f9fa;
     padding: 20px;
     text-align: center;
-    position: relative;
     bottom: 0;
-    left: 0;
+    left: 0; /* Ajustado a 0 */
     width: 100%; /* Ajuste para el ancho del footer */
     box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Añade sombra al footer */
     border-top: 1px solid #ccc; /* Añade borde superior */
+
 }
+
+
+/* Ajuste de la altura del contenido para evitar que se solape con el footer */
+main {
+    margin-top: 80px; /* Altura del header */
+    margin-bottom: 100px; /* Altura del footer */
+}
+
 
 .footer ul {
     list-style-type: none;

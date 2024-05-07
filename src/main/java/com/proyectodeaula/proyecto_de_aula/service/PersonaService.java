@@ -5,29 +5,29 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.proyectodeaula.proyecto_de_aula.interfaceService.IpersonaService;
-import com.proyectodeaula.proyecto_de_aula.interfaces.Interfaz_Usuario;
-import com.proyectodeaula.proyecto_de_aula.model.Usuario;
-
+import com.proyectodeaula.proyecto_de_aula.interfaces.Personas.Interfaz_Persona;
+import com.proyectodeaula.proyecto_de_aula.model.Personas;
+ 
 @Service
-public class UsuarioService implements IpersonaService{
+public class PersonaService implements IpersonaService{
 
     @Autowired
-    private Interfaz_Usuario data;
+    private Interfaz_Persona data;
 
     @Override
-    public List<Usuario> listar() {
-       return (List<Usuario>)data.findAll();
+    public List<Personas> listar() {
+       return (List<Personas>)data.findAll();
     }
 
     @Override
-    public Optional<Usuario> listarId(int id) {
+    public Optional<Personas> listarId(int id) {
         throw new UnsupportedOperationException("Unimplemented method 'listarId'");
     }
 
     @Override
-    public int save(Usuario U) {
+    public int save(Personas U) {
         int res= 0;
-        Usuario Usu = data.save(U);
+        Personas Usu = data.save(U);
         if(!Usu.equals(null)){
             res=1;
         }

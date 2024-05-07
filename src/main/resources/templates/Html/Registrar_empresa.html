@@ -27,13 +27,22 @@
     <main>
         <div class="register-form">
             <h1>REGISTRARSE</h1>
-            <form th:action="@{/login_empresa}" th:object="${Empresa}" method="post">
-                <input th:field="*{nombreEmp}" type="text" placeholder="Nombre de la empresa" required>
-                <input th:field="*{descripcion}" type="text" placeholder="NIT" required>
-                <input th:field="*{email}" type="email" placeholder="Correo electrónico" required>
-                <input th:field="*{direccion}"type="text" placeholder="Dirección" required>
-                <input th:field="*{contraseña}" type="password" placeholder="Contraseña" required>
-                <input th:field="*{repetirContraseña}" type="password" placeholder="Confirmar Contraseña" required>
+            <form th:action="@{/login_empresa}" th:object="${empresaForm}" method="post">
+                <input th:field="*{usuario_empresa.email}" type="email" placeholder="Correo electrónico" required>
+                <div class="password-field">
+                    <input th:field="*{usuario_empresa.contraseña}" id="password" type="password"
+                        placeholder="Contraseña" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility()">
+                        <i id="eye-icon" class="far fa-eye"></i>
+                    </span>
+                </div>
+                <input th:field="*{usuario_empresa.repetirContraseña}" type="password" placeholder="Confirmar Contraseña" required>
+                
+                <input th:field="*{empresas.nombreEmp}" type="text" placeholder="Nombre de la empresa" required>
+                <input th:field="*{empresas.razon_social}" type="text" placeholder="Razon Social" required>
+                <input th:field="*{empresas.direccion}"type="text" placeholder="Dirección" required>
+                <input th:field="*{empresas.nit}"type="number" placeholder="Nit de la empresa" required>
+                
                 <button type="submit">Registrarse</button>
             </form>
         </div>

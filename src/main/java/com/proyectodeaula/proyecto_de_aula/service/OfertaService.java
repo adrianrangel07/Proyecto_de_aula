@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.proyectodeaula.proyecto_de_aula.interfaceService.IofertaService;
-import com.proyectodeaula.proyecto_de_aula.interfaces.Interfaz_ofertas;
-import com.proyectodeaula.proyecto_de_aula.interfaces.Interfaz_ofertas_buscar;
+import com.proyectodeaula.proyecto_de_aula.interfaces.Ofertas.Interfaz_ofertas;
+import com.proyectodeaula.proyecto_de_aula.interfaces.Ofertas.Interfaz_ofertas_buscar;
 import com.proyectodeaula.proyecto_de_aula.model.Ofertas;
 
 @Service

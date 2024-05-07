@@ -24,11 +24,12 @@
                 </a>
                 <div class="barra_busqueda" id="formBusqueda">
                     <form class="d-flex" role="search">
-                        <input class="form form-control me-2" type="search" id="termino" name="termino" placeholder="Buscar ofertas..." aria-label="Search">
+                        <input class="form form-control me-2" type="search" id="termino" name="termino"
+                            placeholder="Buscar ofertas..." aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
-                
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
                     aria-label="Toggle navigation">
@@ -77,7 +78,7 @@
                                     placeholder="Buscar ofertas..." aria-label="Search">
                                 <button class="btn btn-outline-success" id="btn" type="submit">Search</button>
                             </form>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,8 +96,8 @@
                                 <p th:text="${Oferta.descripcion}"></p>
                                 <p style="display: none;" class="salario"><span th:text="${Oferta.salario}"></span>
                                 </p>
-                                <p style="display: none;" class="duracion"><span
-                                        th:text="${Oferta.duracion}"></span></p>
+                                <p style="display: none;" class="duracion"><span th:text="${Oferta.duracion}"></span>
+                                </p>
                                 <p style="display: none;" class="periodo"><span th:text="${Oferta.periodo}"></span>
                                 </p>
                                 <p style="display: none;" class="tipo_empleo"><span
@@ -134,7 +135,7 @@
                             <h5>Links</h5>
                             <ul>
                                 <li><a th:href="@{/}">Inicio</a></li>
-                                <li><a th:href="@{/registrar_usuario}">Registrate</a></li>
+                                <li><a th:href="@{/registrar_persona}">Registrate</a></li>
                                 <li><a th:href="@{/login_persona}">Iniciar sesion</a></li>
                                 <li><a th:href="@{/Nosotros}">Nosotros</a></li>
                             </ul>
@@ -173,26 +174,28 @@
     </footer>
     <script src="../js/Inicio.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        var nombreUsuario = "[[${nombreUsuario}]]";
 
-        if (nombreUsuario) {
-            Swal.fire({
-                icon: "success",
-                title: "Bienvenido, " + nombreUsuario,
-                showConfirmButton: false,
-                backdrop: true,
-                timer: 3000,
-                timerProgressBar: true,
-                position: "center",
-                with: "30%",
-                padding: "1 rem",
-                toast: true,
-            });
-        }
-    });
+    <script src="../js/Inicio_persona.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var nombreUsuario = "[[${nombreUsuario}]]";
+
+            if (nombreUsuario) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Bienvenido, " + nombreUsuario,
+                    showConfirmButton: false,
+                    backdrop: true,
+                    timer: 3000,
+                    timerProgressBar: true,
+                    position: "center",
+                    with: "30%",
+                    padding: "1 rem",
+                    toast: true,
+                });
+            }
+        });
+
     </script>
 </body>
 

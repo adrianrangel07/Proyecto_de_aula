@@ -1,4 +1,4 @@
-package com.proyectodeaula.proyecto_de_aula.interfaces;
+package com.proyectodeaula.proyecto_de_aula.interfaces.Ofertas;
 
 
 import org.springframework.data.repository.CrudRepository;

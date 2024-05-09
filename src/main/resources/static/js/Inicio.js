@@ -93,6 +93,25 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', checkOfferPresence);
 });
 
+//cuando le dan clic a una oferta se mantenga el borde  
+
+document.addEventListener('DOMContentLoaded', function() {
+    const offers = document.querySelectorAll('.offer');
+
+    offers.forEach(offer => {
+        offer.addEventListener('click', function() {
+            // Eliminar la clase 'pressed' de todas las ofertas
+            offers.forEach(otherOffer => {
+                if (otherOffer !== this) {
+                    otherOffer.classList.remove('pressed');
+                }
+            });
+
+            // Agregar la clase 'pressed' a la oferta actual
+            this.classList.add('pressed');
+        });
+    });
+});
 
 
 

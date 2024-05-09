@@ -88,9 +88,9 @@
     <main>
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <div id="resultadoBusqueda">
-                        <div th:each="Oferta:${Ofertas}">
+                        <div th:each="Oferta:${Ofertas}" >
                             <div class="offer" data-id="${Oferta.id}">
                                 <h3 th:text="${Oferta.titulo_puesto}"></h3>
                                 <p th:text="${Oferta.descripcion}"></p>
@@ -106,11 +106,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="container">
                         <div class="offerDetails" style="display: none;">
                             <button id="closeOfferDetails">X</button>
                             <h3></h3>
+                            <span>=========================================</span>
                             <p></p>
                             <p>Salario: <span class="salarioSpan"></span></p>
                             <p>Duración: <span class="duracionSpan"></span></p>

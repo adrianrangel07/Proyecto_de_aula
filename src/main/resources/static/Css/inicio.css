@@ -168,7 +168,6 @@ main {
     width: 100%; /* Ajuste para el ancho del footer */
     box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Añade sombra al footer */
     border-top: 1px solid #ccc; /* Añade borde superior */
-   
 }
 
 /* Ajuste de la altura del contenido para evitar que se solape con el footer */
@@ -232,6 +231,7 @@ main {
     width: 60px;
     height: 60px;
     image-rendering: auto;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 
@@ -264,6 +264,7 @@ main {
 .twitter:hover{
     transform: scale(1.1);
 }
+
 
 @media (max-width: 600px){
     .barra_busqueda{

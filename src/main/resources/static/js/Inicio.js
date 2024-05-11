@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const imagenes = ['2.jpeg', '3.jpeg', 'mas.png']; // Array con las rutas de las imágenes
+    const imagenes = ['2.jpeg', '3.jpeg']; // Array con las rutas de las imágenes
     let indiceImagen = 0;
     const imagenElement = document.querySelector('.imagen img');
 

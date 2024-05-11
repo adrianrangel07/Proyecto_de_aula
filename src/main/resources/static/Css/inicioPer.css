@@ -18,6 +18,14 @@ body {
     /* barra superior */
 }
 
+.navbar-toggler{
+    z-index: 1000;
+}
+
+.option{
+    display: flex;
+    justify-content: space-between;
+}
 
 .offcanvas {
     background-color: #0a1128;
@@ -91,6 +99,22 @@ body {
     display: none;
 }
 
+.imguser img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 100%;
+    border: solid #0a1128 3px;
+}
+
+.imguser{
+    box-sizing: content-box;
+    width: 50px;
+    height: 50px;
+    margin-right: 12px;
+}
+
 /* Estilos para las ofertas */
 
 .offer {
@@ -139,7 +163,7 @@ body {
 
 /* footer */
 .footer {
-    background-color: #f8f9fa;
+    background-color: #99B3FF;
     padding: 20px;
     text-align: center;
     bottom: 0;
@@ -173,9 +197,10 @@ main {
 /* redes */
 
 .redes {
-    background-color: white;
+    background-color: #99B3FF;
     display: flex;
-    width: auto;
+    justify-content: space-between;
+    width: 250px;
     height: 30px;
     margin-left: 10%;
 }
@@ -189,31 +214,25 @@ main {
 }
 
 .facebook{
-    display: flex;
     width: 50px;
     height: 50px;
     image-rendering: auto;
-    margin-left: 14%;
     margin-top: 1%;
     cursor: pointer;
-    margin-right: 60px;
 }
 
 .instagram{
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     image-rendering: auto;
-    display: flex;
-    margin-top: 2.6%;
+    margin-bottom: 20px;
     cursor: pointer;
-    margin-right: 20%;
 }
 
 .twitter{
     width: 40px;
     height: 40px;
     image-rendering: auto;
-    display: flex;
     margin-top: 2.6%;
     cursor: pointer;
 }
@@ -240,7 +259,7 @@ main {
     transform: scale(1.1);
 }
 
-@media (max-width: 600px){
+@media (max-width: 700px){
     .barra_busqueda{
         display: none;
     }

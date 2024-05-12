@@ -91,4 +91,10 @@ public class PersonaController {
         return "html/contraseña_incorrectauser";
     }
 
+    @GetMapping("/Estadisticas")
+    public String estadistica() {
+        return "html/Estadisticas";
+    }
+    
+
 }

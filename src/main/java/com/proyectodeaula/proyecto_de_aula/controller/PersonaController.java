@@ -39,17 +39,17 @@ public class PersonaController {
         // Obtener los datos de persona y usuario_persona
         Personas persona = personaForm.getPersonas();
         Usuario_persona usuario = personaForm.getUsuario_persona();
-        
+
         // Guardar la persona y obtener su ID
         persona = per.save(persona);
-        
+
         // Establecer la relación en usuario_persona
         usuario.setPersonas(persona);
-        
+
         // Guardar el usuario_persona
         usuario = user.save(usuario);
-
-        // Redireccionar a alguna página de éxito o mostrar un mensaje
+        
+        // Redireccionar a la página de inicio de sesión
         return "redirect:/login_persona";
     }
 
@@ -95,6 +95,19 @@ public class PersonaController {
     public String estadistica() {
         return "html/Estadisticas";
     }
-    
 
+    @GetMapping("/Contraseña-olvidada")
+    public String olvidar() {
+        return "html/contraseña_olvidada_per";
+    }
+
+    @GetMapping("/perfil")
+    public String Myperfil(){
+        return "html/Mi_perfil";
+    }
+
+    @GetMapping("/configuracion")
+    public String configuracion(){
+        return "html/Configuracion";
+    }
 }

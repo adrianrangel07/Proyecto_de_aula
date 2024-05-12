@@ -116,9 +116,9 @@ body {
     border: 2px solid #000;
     padding: 20px;
     min-height: 400px;
-    max-height: 300px;
+    max-height: 320px;
     overflow-y: auto;
-    width: 450px; /* ancho de la oferta */
+    width: 470px; /* ancho de la oferta */
     border-radius: 4px;
     background-color: #f8f9fa;
     transition: opacity 0.4s ease-in-out;
@@ -257,6 +257,14 @@ main {
     transform: scale(1.1);
 }
 
+.imagen{
+    border-radius: 30px ;
+    position: fixed;
+    box-shadow: 0 0 5px rgba(10, 17, 40, 0.5);
+    width: 480px;
+    height: 350px;
+    opacity: 0.9;
+}
 
 @media (max-width: 600px){
     .barra_busqueda{

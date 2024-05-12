@@ -59,7 +59,7 @@ public class EmpresaController {
 	}
 
 	// inicio de sesion, validacion de datos y redireccionamiendo de pagina
-	@PostMapping("/Login_Empresa/inicio")
+	@PostMapping("/inicio_empresa")
 	public String iniciarSesionemp(Model model, @RequestParam String email, @RequestParam String contraseña) {
         // Buscar al usuario en la base de datos por su email y contraseña
         Usuario_empresa usu_empresa = u_emp.findByEmailAndContraseña(email, contraseña);
@@ -83,7 +83,7 @@ public class EmpresaController {
         }
     }
 
-	@GetMapping("/Login_Empresa/inicio")
+	@GetMapping("/inicio_empresa")
 	public String inicio() {
 		return "html/InicioEmp";
 	}
@@ -97,4 +97,9 @@ public class EmpresaController {
 	public String oferta() {
 		return "html/Oferta";
 	}
+
+    @GetMapping("/Contraseña-olvidada-empresa")
+    public String olvidar_emp(){
+        return "html/contraseña_olvidada_emp";
+    }
 }

@@ -1,31 +1,15 @@
+
 * {
     font-family: Arial, sans-serif;
 }
 
+/* te sivre para cambiar el fondo */
 body {
     background-color: #bde0fe;
 }
-
-.imagen{
-    border-radius: 30px ;
-    position: fixed;
-    box-shadow: 0 0 5px rgba(10, 17, 40, 0.5);
-    width: 480px;
-    height: 350px;
-    opacity: 0.9;
-}
-
 .navbar {
     background-color: #0a1128;
-}
-
-.navbar-toggler{
-    z-index: 1000;
-}
-
-.option{
-    display: flex;
-    justify-content: space-between;
+    /* barra superior */
 }
 
 .offcanvas {
@@ -65,124 +49,6 @@ body {
     transform: scale(1.1);
 }
 
-.form{
-    /*barra de busqueda */
-    width: 300px;
-    background: transparent;
-    border-radius: 0;         
-    border-bottom: 1px solid #ffffff;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-}
-.form::placeholder{
-    color: #ffffff;
-}
-
-.btn{
-    color: #ffffff;
-    border-color: #ffffff;
-}
-
-.btn:hover{
-    color: #001f54;
-    border-color: #ffffff;
-    background-color: #ffffff;
-}
-
-#btn:active{
-    color: #001f54;
-    border-color: #ffffff;
-    background-color: #ffffff;
-}
-
-.barra_busqueda_responsive{
-    display: none;
-}
-
-.imguser img{
-    width: 100%;
-    overflow: hidden;
-    background-color: #ffffff;
-    border-radius: 100%;
-    border: solid #0a1128 3px;
-}
-
-.imguser{
-    box-sizing: content-box;
-    width: 50px;
-    height: 50px;
-    margin-right: 12px;
-}
-
-/* Estilos para las ofertas */
-
-.offer {  
-    border-radius: 10px;
-    margin-bottom: 10px;
-    padding: 8px;
-    cursor: pointer;
-    background-color: #f8f9fa;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap;
-}
-
-.offer.pressed {
-    border: 1px solid #0a1128; /* Estilo del borde cuando está presionado */
-    box-shadow: 0 0 5px rgba(10, 17, 40, 0.5); /* Sombra para resaltar */
-}
-
-.offer:hover {
-    border: 1px solid #0a1128;
-    box-shadow: 0 0 5px rgba(10, 17, 40, 0.5);
-}
-
-.offer h3 {
-    font-size: 24px;  
-    text-align: center;  
-}
-
-
-/* estilo de la seccion detalles de la ofertas */
-.offerDetails {
-    position: fixed;
-    border: 2px solid #000;
-    padding: 20px;
-    min-height: 400px;
-    max-height: 300px;
-    overflow-y: auto;
-    width: 450px; /* ancho de la oferta */
-    border-radius: 4px;
-    background-color: #f8f9fa;
-    transition: opacity 0.4s ease-in-out;
-
-    scrollbar-color: #001f54 #ffffff; /* Cambiar el color de la barra y el thumb */
-    scrollbar-width: thin; 
-    
-}
-
-.offerDetails h3{
-    text-align: center;
-}
-
-.offerDetails p{
-    text-align: justify;
-}
-
-/* boton x en los detalles de oferts */
- #closeOfferDetails {   
-    margin-bottom: 20px;
-    border-radius: 20px;
-    height: 30px;
-    width: 40px;
-    font-size: 16px; 
-}
-
-#closeOfferDetails:hover {
-    background-color: #ccc;
-    color: #000;
-}
 
 /* footer */
 .footer {
@@ -194,6 +60,7 @@ body {
     width: 100%; /* Ajuste para el ancho del footer */
     box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Añade sombra al footer */
     border-top: 1px solid #ccc; /* Añade borde superior */
+    position: fixed;
 }
 
 /* Ajuste de la altura del contenido para evitar que se solape con el footer */
@@ -224,15 +91,25 @@ main {
     justify-content: space-between;
     width: 250px;
     height: 30px;
-    margin-left: 10%;
+    margin-left: 15%;
+}
+
+.redes-1{
+    color: #000;
+}
+
+.Links{
+    text-decoration: none;
 }
 
 .link{
     margin-left: -10%;
+    color: #000;
 }
 
 .contacto{
     margin-right: 10%;
+    color: #000;
 }
 
 .facebook{
@@ -327,23 +204,4 @@ main {
     .imagen {
         display: none;
     }
-}
-
-.centered-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;   
-}
-
-#postularseBtn {
-    padding: 10px 20px;
-    background-color: #001f54;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#postularseBtn:hover{
-    background-color: #007bff;
 }

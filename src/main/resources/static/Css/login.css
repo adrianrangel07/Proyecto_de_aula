@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
     user-select: none;
+    background-color: #bde0fe;
 }
 
 .top-bar {
@@ -86,10 +87,11 @@ h1{
     max-width: 300px;
     margin: 20px auto 50px; 
     padding: 30px;
-    border: 3px solid black;
-    border-radius: 5px;
+    border: 2px solid black;
+    border-radius: 12px;
     position: relative;
     text-align: center;
+    background-color: #fff;
 }
 
 .login-form h1 {
@@ -165,43 +167,13 @@ h1{
     height: auto;
 }
 
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;                    /* barra superior de navegacion */
-    background-color:#0a1128;
-    color: white;
-    padding: 10px;
-    height: 44px;
-}
-.nav-menu{
-    display: flex;
-    margin-right: 0px;              /* las opciones de registro y empresa*/
-    list-style: none;
-    line-height: 25px;
+.contraseña_olvidada{
+    cursor: pointer;
+    
 }
 
-.nav-barra{
-    display: none;  /* barra lateral */
-}
-
-.nav-menu-item{
-    font-size: 17px;
-    margin: 0 15px; 
-    width: max-content;
-    height: 10px;
-}
-.nav-menu-item a{
-    text-decoration: none;
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 10px;
-}
-.nav-menu-item a:hover{
-    background-color: #ffffff;
-    color: #0a1128;
-    height: 40px;
-    transition: 0.4s;
+.contraseña_olvidada:hover{
+    text-decoration: underline;
 }
 
 @media (max-width: 768px){

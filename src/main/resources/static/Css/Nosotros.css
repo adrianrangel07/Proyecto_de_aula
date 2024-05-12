@@ -4,15 +4,11 @@
 }
 
 body {
-    background-color: #dceef5;
-    background-image: radial-gradient(#212d65 1px, transparent 1px), radial-gradient(#654321 1px, transparent 1px);
-    background-size: 40px 40px;
-    background-position: 0 0, 20px 20px;
-    min-height: 100vh;
+    background-color: #bde0fe;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    margin-top: 50px; /* Ajuste para espacio entre header y contenido */
+    margin-top: 35px; /* Ajuste para espacio entre header y contenido */
 }
 
 .navbar {
@@ -52,16 +48,23 @@ body {
     transform: scale(1.1);
 }
 
+/* footer */
+
 .footer {
-    background-color: #f8f9fa;
+    background-color: #99B3FF;
     padding: 20px;
     text-align: center;
-    position: relative;
     bottom: 0;
-    left: 0;
+    left: 0; /* Ajustado a 0 */
     width: 100%; /* Ajuste para el ancho del footer */
     box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Añade sombra al footer */
     border-top: 1px solid #ccc; /* Añade borde superior */
+}
+
+/* Ajuste de la altura del contenido para evitar que se solape con el footer */
+main {
+    margin-top: 80px; /* Altura del header */
+    margin-bottom: 100px; /* Altura del footer */
 }
 
 .footer ul {
@@ -78,51 +81,54 @@ body {
     font-size: 14px; /* Ajusta el tamaño de la fuente */
 }
 
-
 /* redes */
 
 .redes {
-    background-color: white;
+    background-color: #99B3FF;
     display: flex;
-    width: auto;
-    height: 50px;
-    margin-left: 10%;
+    justify-content: space-between;
+    width: 250px;
+    height: 30px;
+    margin-left: 15%;
+}
+
+.redes-1{
+    color: #000;
+}
+
+.Links{
+    text-decoration: none;
 }
 
 .link{
     margin-left: -10%;
+    color: #000;
 }
 
 .contacto{
     margin-right: 10%;
+    color: #000;
 }
 
 .facebook{
-    display: flex;
     width: 50px;
     height: 50px;
     image-rendering: auto;
-    margin-left: 14%;
     margin-top: 1%;
     cursor: pointer;
-    margin-right: 60px;
 }
 
 .instagram{
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     image-rendering: auto;
-    display: flex;
-    margin-top: 2.6%;
     cursor: pointer;
-    margin-right: 20%;
 }
 
 .twitter{
     width: 40px;
     height: 40px;
     image-rendering: auto;
-    display: flex;
     margin-top: 2.6%;
     cursor: pointer;
 }
@@ -141,11 +147,23 @@ body {
     transition: .4s;
 }
 
-.twitter:hover{
-    transform: scale(1.1);
-}
 .twitter{
     transition: .4s;
 }
 
+.twitter:hover{
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px){
+   
+}
+
+@media (max-width: 767px) {
+    
+}
+
+@media (min-width: 400px) and (max-width: 991px) {
+   
+}
 

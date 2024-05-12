@@ -7,17 +7,18 @@
     <title>Workwise Navigator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="website icon" href="../imagenes/wknlogo2.png">
-    <link rel="stylesheet" href="../CSS/login_persona.css">
+    <link rel="stylesheet" href="../CSS/login.css">
     <link rel="stylesheet" href="../CSS/normalize.css">
     <link rel="stylesheet" href="../CSS/contraseña_olvidada_per.css">
 </head>
+
 <body>
     <header>
         <nav class="top-bar">
-			<a href="/"><img src="../Imagenes/wknname.png" alt="Logo" id="logo" class="logo"></a>
+            <a href="/"><img src="../Imagenes/wknname.png" alt="Logo" id="logo" class="logo"></a>
             <ul class="nav-menu">
                 <li class="nav-menu-item">
-                    <a href="login_persona.html">Iniciar sesion</a>
+                    <a th:href="@{/login_persona}">Iniciar sesion</a>
                 </li>
             </ul>
         </nav>
@@ -28,7 +29,7 @@
                 <img src="../imagenes/imagenperfil.png" alt="Imagen de encabezado">
             </div>
             <h1>Recuperar Contraseña</h1>
-            <form>
+            <form th:action="@{/login_persona}" method="post">
                 <input class="submit" type="email" placeholder="Correo electrónico" required>
                 <div id="captcha-box">
                     <div id="captcha"></div>

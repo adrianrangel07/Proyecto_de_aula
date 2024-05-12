@@ -284,10 +284,26 @@ document.addEventListener('DOMContentLoaded', function () {
             showConfirmButton: false,
             timerProgressBar: true,
             position: "center",
+            color: "#000",
+            background: "#9dcef8",
             with: "30%",
             padding: "1 rem",
             toast: true,
-            timer: 3000 
+            timer: 3000,
+            showClass: {
+                popup: `
+                  animate__animated
+                  animate__fadeInUp
+                  animate__faster
+                `
+              },
+              hideClass: {
+                popup: `
+                  animate__animated
+                  animate__fadeOutDown
+                  animate__faster
+                `
+              }
         });
     });
 });

@@ -12,7 +12,6 @@ body {
     /* barra superior */
 }
 
-
 .offcanvas {
     background-color: #0a1128;
     /* barra de navegacion */
@@ -151,12 +150,6 @@ body {
     color: #000;
 }
 
-/* Ajuste de la altura del contenido para evitar que se solape con el footer */
-main {
-    margin-top: 80px; /* Altura del header */
-    margin-bottom: 100px; /* Altura del footer */
-}
-
 /* footer */
 
 .footer {
@@ -231,7 +224,6 @@ main {
     width: 60px;
     height: 60px;
     image-rendering: auto;
-    margin-bottom: 20px;
     cursor: pointer;
 }
 
@@ -274,6 +266,9 @@ main {
     .barra_busqueda_responsive{
         display: block;
     }
+    .imagen {
+        display: none;
+    }
 }
 
 @media (max-width: 767px) {
@@ -288,6 +283,9 @@ main {
         left: 50%;
         transform: translate(-50%, -50%);
         width: 400px;
+    }
+    .imagen {
+        display: none;
     }
 }
 
@@ -304,4 +302,26 @@ main {
         transform: translate(-50%, -50%);
         width: 400px;
     }
+    .imagen {
+        display: none;
+    }
+}
+
+.centered-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+#postularseBtn {
+    padding: 10px 20px;
+    background-color: #001f54;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#postularseBtn:hover{
+    background-color: #007bff;
 }

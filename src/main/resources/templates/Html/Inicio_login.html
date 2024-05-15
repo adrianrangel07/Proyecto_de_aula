@@ -26,11 +26,11 @@
                     <form class="d-flex" role="search">
                         <input class="form form-control me-2" type="search" id="termino" name="termino"
                             placeholder="Buscar ofertas..." aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
                 </div>
                 <div class="option">
-                    <div class="nombreUsuario" id="nombreUsuario"></div>
+
                     <div class="imguser">
                         <a href="#"><img src="../Imagenes/user.png" alt=""></a>
                     </div>
@@ -58,10 +58,12 @@
                                 <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/}">Cerrar Sesión</a>
                             </li>
                             <li class="nav-item">
-                                <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/perfil}">Mi perfil</a>
+                                <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/perfil}">Mi
+                                    perfil</a>
                             </li>
                             <li class="nav-item">
-                                <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/configuracion}">Configuracion</a>
+                                <a class="letras nav-rp nav-link " aria-current="page"
+                                    th:href="@{/configuracion}">Configuracion</a>
                             </li>
                             <li class="nav-item dropdown"> <!-- barra desplagable dentro de la barrra lateral-->
                                 <a class="letras nav-link dropdown-toggle" href="#" role="button"
@@ -96,7 +98,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <div id="resultadoBusqueda">
-                        <div th:each="Oferta:${Ofertas}">
+                        <div th:each="Oferta:${Ofertas1}">
                             <div class="offer" data-id="${Oferta.id}">
                                 <h3 th:text="${Oferta.titulo_puesto}"></h3>
                                 <p th:text="${Oferta.descripcion}"></p>
@@ -114,8 +116,8 @@
                 </div>
                 <div class="col-md-5">
                     <div class="container">
-                        <div class="imagen">
-                            <img src="../Imagenes/2.jpeg" alt="Descripción de la imagen" class="imagen">
+                        <div class="border-imagen">
+                            <img src="../Imagenes/wknLogo.png" alt="Descripción de la imagen" class="imagen">
                         </div>
                         <div class="offerDetails" style="display: none;">
                             <button id="closeOfferDetails">X</button>
@@ -187,33 +189,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/Inicio_persona.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var nombreUsuario = "[[${nombreUsuario}]]";
-
-            if (nombreUsuario) {
-                Swal.fire({
-                    icon: "success",
-                    title: "Bienvenido, " + nombreUsuario,
-                    showConfirmButton: false,
-                    backdrop: true,
-                    timer: 3000,
-                    timerProgressBar: true,
-                    position: "top",
-                    with: "30%",
-                    padding: "1 rem",
-                    toast: true,
-                });
-            }
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            var nombreUsuario = "[[${nombreUsuario}]]";
-
-        });
-
-    </script>
 </body>
 
 </html>

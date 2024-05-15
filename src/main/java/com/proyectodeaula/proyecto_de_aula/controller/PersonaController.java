@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.proyectodeaula.proyecto_de_aula.interfaces.Personas.Interfaz_Persona;
 import com.proyectodeaula.proyecto_de_aula.interfaces.Personas.Interfaz_Usuario_Per;
@@ -48,34 +49,29 @@ public class PersonaController {
 
         // Guardar el usuario_persona
         usuario = user.save(usuario);
-        
+
         // Redireccionar a la página de inicio de sesión
         return "redirect:/login_persona";
     }
 
     @GetMapping("/login_persona")
-    private String iniciar_sesion() {
+    public String iniciar_sesion() {
         return "html/login_persona";
     }
 
     @PostMapping("/login_inicio")
     public String iniciarSesion(Model model, @RequestParam String email, @RequestParam String contraseña) {
-        // Buscar al usuario en la base de datos por su email y contraseña
         Usuario_persona usuario = user.findByEmailAndContraseña(email, contraseña);
         if (usuario != null) {
-            // Aquí obtienes la persona asociada al usuario
             Personas persona = usuario.getPersonas();
             if (persona != null) {
                 model.addAttribute("nombreUsuario", persona.getNombrePer());
-                return "html/Inicio_login";
+                return "redirect:/login_inicio"; // Redirigir a la nueva ruta
             } else {
-                // Si la persona asociada al usuario es nula, puedes agregar un mensaje de error
                 model.addAttribute("error", "La persona asociada al usuario no fue encontrada");
                 return "html/contraseña_incorrectauser";
             }
         } else {
-            // Si el usuario no existe o las credenciales son incorrectas, puedes agregar un
-            // mensaje de error y volver al formulario de inicio de sesión
             model.addAttribute("error", "Credenciales incorrectas");
             return "html/contraseña_incorrectauser";
         }
@@ -102,12 +98,13 @@ public class PersonaController {
     }
 
     @GetMapping("/perfil")
-    public String Myperfil(){
+    public String Myperfil() {
         return "html/Mi_perfil";
     }
 
     @GetMapping("/configuracion")
-    public String configuracion(){
+    public String configuracion() {
         return "html/Configuracion";
     }
+
 }

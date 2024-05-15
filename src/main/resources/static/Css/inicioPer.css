@@ -6,13 +6,36 @@ body {
     background-color: #bde0fe;
 }
 
+.border-imagen{
+    position: relative;
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+}
+
 .imagen{
     border-radius: 30px ;
-    position: fixed;
-    box-shadow: 0 0 5px rgba(10, 17, 40, 0.5);
-    width: 480px;
-    height: 350px;
-    opacity: 0.9;
+    position: relative;
+    align-self: center;
+    text-align: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    opacity: 1;
+    animation: moveAndRotate 8s infinite alternate;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes moveAndRotate {
+    0% {
+        transform: translateX(-80px) rotateY(0deg);
+    }
+    50% {
+        transform: translateX(80px) rotateY(180deg);
+    }
+    100% {
+        transform: translateX(0) rotateY(360deg);
+    }
 }
 
 .navbar {
@@ -194,6 +217,7 @@ body {
     width: 100%; /* Ajuste para el ancho del footer */
     box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Añade sombra al footer */
     border-top: 1px solid #ccc; /* Añade borde superior */
+    z-index: -1;
 }
 
 /* Ajuste de la altura del contenido para evitar que se solape con el footer */

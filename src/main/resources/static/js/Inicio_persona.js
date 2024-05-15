@@ -1,3 +1,36 @@
+document.addEventListener("DOMContentLoaded", function () {
+    fetch('/login_inicio') 
+      .then(response => response.json())
+      .then(persona => {
+        if (persona && persona.nombreUsuario) {
+          Swal.fire({
+            icon: "success",
+            title: "Bienvenido, " + persona.nombreUsuario,
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            position: "top",
+            with: "30%",
+            padding: "1 rem",
+            toast: true,
+          });
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching username:', error);
+        Swal.fire({
+          icon: "info",
+          title: "BIENVENID@",
+          showConfirmButton: false,
+          
+          timer: 3000,
+          timerProgressBar: true,
+          position: "top",
+          toast: true,
+        });
+      });
+  });
+
 document.addEventListener('DOMContentLoaded', function () {
     const offers = document.querySelectorAll('.offer');
     const offerDetails = document.querySelector('.offerDetails');
@@ -19,7 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
 
 //filtro de busqueda
 document.getElementById('formBusqueda').addEventListener('submit', function (event) {
@@ -60,11 +92,13 @@ function buscarOfertas(termino) {
 
             // Mover el footer al final del cuerpo de la página
             const footer = document.querySelector('.footer');
-            document.body.appendChild(footer);
+            if (footer.style.position === 'relative') {
+                footer.style.position = 'fixed';
+            } else {
+                footer.style.position = 'relative';
+            }
         });
 }
-
-
 
 //oferta de detalles
 document.addEventListener('DOMContentLoaded', function () {
@@ -117,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //cuando le dan clic a una oferta se mantenga el borde  
-
 document.addEventListener('DOMContentLoaded', function () {
     const offers = document.querySelectorAll('.offer');
 
@@ -207,21 +240,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const imagenes = ['2.jpeg', '3.jpeg']; // Array con las rutas de las imágenes
-    let indiceImagen = 0;
-    const imagenElement = document.querySelector('.imagen img');
-
-    function cambiarImagen() {
-        imagenElement.src = '../Imagenes/' + imagenes[indiceImagen];
-        indiceImagen = (indiceImagen + 1) % imagenes.length; // Avanzar al siguiente índice, asegurándose de que no se pase del límite del array
-    }
-
-    cambiarImagen(); // Mostrar la primera imagen al cargar la página
-
-    setInterval(cambiarImagen, 5000); // Cambiar la imagen cada 5 segundos (5000 milisegundos)
-});
-
-document.addEventListener('DOMContentLoaded', function () {
     const offers = document.querySelectorAll('.offer');
     const offerDetails = document.querySelector('.offerDetails');
     const imagen = document.querySelector('.imagen');
@@ -273,6 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//mensaje de cerrar sesion
 document.addEventListener('DOMContentLoaded', function () {
     const cerrarSesion = document.querySelector('.nav-rp');
     if (cerrarSesion) {
@@ -292,8 +311,3 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
-
-
-
-
-

@@ -60,11 +60,13 @@ function buscarOfertas(termino) {
 
             // Mover el footer al final del cuerpo de la página
             const footer = document.querySelector('.footer');
-            document.body.appendChild(footer);
+            if (footer.style.position === 'relative') {
+                footer.style.position = 'fixed';
+            } else {
+                footer.style.position = 'relative';
+            }
         });
 }
-
-
 
 //oferta de detalles
 document.addEventListener('DOMContentLoaded', function () {
@@ -116,8 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('resize', checkOfferPresence);
 });
 
-//cuando le dan clic a una oferta se mantenga el borde  
-
+//cuando le dan clic a una oferta se mantenga el borde 
 document.addEventListener('DOMContentLoaded', function () {
     const offers = document.querySelectorAll('.offer');
 
@@ -160,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
     adjustOfferPosition(); // Llamar a la función al cargar la página
 });
 
+//imagen cambia con dettale de oferta
 document.addEventListener('DOMContentLoaded', function () {
     const offerDetails = document.querySelector('.offerDetails');
     const imagen = document.querySelector('.imagen');
@@ -206,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+//imagen con cambios
 document.addEventListener('DOMContentLoaded', function () {
     const imagenes = ['2.jpeg', '3.jpeg']; // Array con las rutas de las imágenes
     let indiceImagen = 0;
@@ -285,25 +288,10 @@ document.addEventListener('DOMContentLoaded', function () {
             timerProgressBar: true,
             position: "center",
             color: "#000",
-            background: "#9dcef8",
             with: "30%",
             padding: "1 rem",
             toast: true,
             timer: 3000,
-            showClass: {
-                popup: `
-                  animate__animated
-                  animate__fadeInUp
-                  animate__faster
-                `
-              },
-              hideClass: {
-                popup: `
-                  animate__animated
-                  animate__fadeOutDown
-                  animate__faster
-                `
-              }
         });
     });
 });

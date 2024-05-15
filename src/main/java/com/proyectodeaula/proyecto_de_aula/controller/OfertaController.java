@@ -25,6 +25,13 @@ public class OfertaController {
 	@Autowired
 	private OfertaService offerta;
 
+	@GetMapping("/login_inicio")
+	public String listar_ofertas_1(Model model){
+		List <Ofertas> Ofertas1=offerService.listar_ofertas();
+		model.addAttribute("Ofertas1", Ofertas1);
+		return "html/Inicio_login";
+	}
+
     @GetMapping("/")
 	public String listar_ofertas(Model model){
 		List <Ofertas> Ofertas=offerService.listar_ofertas();
@@ -32,21 +39,9 @@ public class OfertaController {
 		return "html/Inicio";
 	}
 
-	@GetMapping("/login_inicio")
-	public String listar_ofertas_1(Model model){
-		List <Ofertas> Ofertas=offerService.listar_ofertas();
-		model.addAttribute("Ofertas", Ofertas);
-		return "html/inicio_login";
-	}
-
 	@GetMapping("/buscar_ofertas")
 	@ResponseBody
 	public List<Ofertas> buscarOfertas(@RequestParam("termino") String termino) {
 		return offerta.buscarOfertasPorTermino(termino);
 	}
-	
-
 }
-
-
-

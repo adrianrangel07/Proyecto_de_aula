@@ -1,49 +1,15 @@
+
 * {
     font-family: Arial, sans-serif;
 }
 
+/* te sivre para cambiar el fondo */
 body {
     background-color: #bde0fe;
 }
-
-.border-imagen{
-    position: relative;
-    align-self: center;
-    text-align: center;
-    justify-content: center;
-}
-
-.imagen{
-    border-radius: 30px ;
-    position: relative;
-    align-self: center;
-    text-align: center;
-    justify-content: center;
-    width: 120px;
-    height: 120px;
-    opacity: 1;
-    animation: moveAndRotate 8s infinite alternate;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes moveAndRotate {
-    0% {
-        transform: translateX(-80px) rotateY(0deg);
-    }
-    50% {
-        transform: translateX(80px) rotateY(180deg);
-    }
-    100% {
-        transform: translateX(0) rotateY(360deg);
-    }
-}
-
 .navbar {
     background-color: #0a1128;
-}
-
-.navbar-toggler{
-    z-index: 1000;
+    /* barra superior */
 }
 
 .offcanvas {
@@ -118,33 +84,6 @@ body {
     display: none;
 }
 
-.option{
-    display: flex;
-    justify-content: space-between;
-}
-
-.imguser img:hover{
-    transform: scale(1.1);
-}
-.imguser img{
-    width: 100%;
-    overflow: hidden;
-    background-color: #ffffff;
-    border-radius: 100%;
-    border: solid #0a1128 3px;
-    transition: .4s;
-}
-
-.imguser{
-    box-sizing: content-box;
-    width: 50px;
-    height: 50px;
-    margin-right: 12px;
-}
-
-/* fin header */
-/* Estilos para las ofertas */
-
 .offer {  
     border-radius: 10px;
     margin-bottom: 10px;
@@ -171,16 +110,15 @@ body {
     text-align: center;  
 }
 
-
 /* estilo de la seccion detalles de la ofertas */
 .offerDetails {
     position: fixed;
     border: 2px solid #000;
     padding: 20px;
     min-height: 400px;
-    max-height: 300px;
+    max-height: 320px;
     overflow-y: auto;
-    width: 450px; /* ancho de la oferta */
+    width: 470px; /* ancho de la oferta */
     border-radius: 4px;
     background-color: #f8f9fa;
     transition: opacity 0.4s ease-in-out;
@@ -212,23 +150,112 @@ body {
     color: #000;
 }
 
+/* Ajuste de la altura del contenido para evitar que se solape con el footer */
+main {
+    margin-top: 80px; /* Altura del header */
+    /* margin-bottom: 100px; Altura del footer */
+}
+
+.w3-text-tealp{
+    color: #001f54;
+}
+
+.w3-teals{
+    background-color: #001f54 !important;
+    color: #ffffff;
+}
+
+.camara:hover{
+    transform: scale(1.2);
+}
+
+.camara{
+    color: #001f54;
+    position: absolute;
+    left: 80%;
+    font-size: 30px !important;
+    z-index: 100;
+    margin: 10px;
+    transition: .3s;
+}
+
+.w3-display-container{
+    height: 300px;
+    width: 60%;
+    margin-bottom: 10px;
+    border-bottom: solid 1px #999999;
+    border-right: solid 1px #999999;
+    border-right: solid 1px #999999;
+
+}
+
+.w3-display-container img{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.datos{
+    justify-content: space-between;
+    width: 40%;
+} 
+
+.w3-container input{
+    padding: 10px;
+    background-color: #dddddd;
+    border: 0;
+    border-radius: 7px;
+    height: 30px;
+    width: calc(100% - 40px)
+}
+.porta{
+    font-size: 30px !important;
+}
+
+button {
+    padding: 15px 20px;
+    margin-bottom: 8px !important;
+    background-color: #001f54;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #034078;
+}
+
+.content{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+@media (min-width: 700px){
+    
+    .w3-third{
+        width: 40% !important;
+    }
+
+    .w3-twothird{
+        width: 60% !important;
+    }
+}
+
+
 /* footer */
+
 .footer {
     background-color: #99B3FF;
     padding: 20px;
+    position: relative;
     text-align: center;
     bottom: 0;
     left: 0; /* Ajustado a 0 */
     width: 100%; /* Ajuste para el ancho del footer */
     box-shadow: 0 -2px 5px rgba(0,0,0,0.2); /* Añade sombra al footer */
     border-top: 1px solid #ccc; /* Añade borde superior */
-    z-index: -1;
-}
-
-/* Ajuste de la altura del contenido para evitar que se solape con el footer */
-main {
-    margin-top: 80px; /* Altura del header */
-    margin-bottom: 100px; /* Altura del footer */
 }
 
 .footer ul {
@@ -253,15 +280,25 @@ main {
     justify-content: space-between;
     width: 250px;
     height: 30px;
-    margin-left: 10%;
+    margin-left: 15%;
+}
+
+.redes-1{
+    color: #000;
+}
+
+.Links{
+    text-decoration: none;
 }
 
 .link{
     margin-left: -10%;
+    color: #000;
 }
 
 .contacto{
     margin-right: 10%;
+    color: #000;
 }
 
 .facebook{
@@ -307,6 +344,15 @@ main {
 
 .twitter:hover{
     transform: scale(1.1);
+}
+
+.imagen{
+    border-radius: 30px ;
+    position: fixed;
+    box-shadow: 0 0 5px rgba(10, 17, 40, 0.5);
+    width: 480px;
+    height: 350px;
+    opacity: 0.9;
 }
 
 @media (max-width: 600px){

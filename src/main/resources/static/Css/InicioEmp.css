@@ -11,7 +11,7 @@ body {
 }
 
 
-
+/* inicio header */
 .navbar {
     background-color: #0a1128;
     position: sticky;
@@ -92,16 +92,26 @@ body {
     display: none;
 }
 
-.imguser img{
+.option{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgemp img:hover{
+    transform: scale(1.1);
+}
+
+.imgemp img{
     width: 100%;
     height: 100%;
     overflow: hidden;
     background-color: #ffffff;
     border-radius: 100%;
     border: solid #0a1128 3px;
+    transition: .3s;
 }
 
-.imguser{
+.imgemp{
     box-sizing: content-box;
     width: 50px;
     height: 50px;
@@ -110,8 +120,8 @@ body {
 
 /* Estilos para las ofertas */
 main {
-    position: absolute;
-    overflow: hidden;
+    /* position: absolute;
+    overflow: hidden; */
     /* O overflow: auto; según tus necesidades */
     width: 100%;
     /* margin-top: 80px; */
@@ -162,10 +172,7 @@ main {
 }
 
 /* Ajuste de la altura del contenido para evitar que se solape con el footer */
-main {
-    margin-top: 80px; /* Altura del header */
-    margin-bottom: 100px; /* Altura del footer */
-}
+
 
 .footer ul {
     list-style-type: none;

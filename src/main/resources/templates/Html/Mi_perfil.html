@@ -48,10 +48,7 @@
                             <li class="nav-item">
                                 <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/login_inicio}">VOLVER
                                     AL INICIO</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="letras nav-rp nav-link" href="#">CONFIGURACION</a>
-                            </li>
+                            </li>                          
                             <li class="nav-item dropdown"> <!-- barra desplagable dentro de la barrra lateral-->
                                 <a class="letras nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -93,16 +90,16 @@
                         <div class="content">
                             <div class="w3-display-container">
                                 <i class="fa fa-camera camara" onclick="triggerFileInput()"></i>
-                                <input type="file" accept="image/*" onchange="loadFile(event)" id="file" style="display: none;">
+                                <input type="file" accept="image/png, image/jpeg" onchange="loadFile(event)" id="file" style="display: none;">
                                 <img  style="width:100%" alt="Avatar" id="fotoperfil" src="../Imagenes/imagenperfil.png">
                             </div>
                             <div class="w3-container">
-                                <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-tealp"></i>nombre</p>
-                                <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-tealp"></i>*Apellido*</p>
-                                <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-tealp"></i>*email*</p>
-                                <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-tealp"></i>123456</p>
+                                <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${nombre}]]</p>
+                                <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${apellido}]]</p>
+                                <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${email}]]</p>
                                 <hr>
                             </div>
+                            
                         </div>
                         <div class="w3-container">
                             <h2><i class="fa fa-suitcase fa-fw w3-margin-right  w3-text-tealp porta"></i>Subir hoja de vida</h2>
@@ -123,7 +120,7 @@
                         <h2 class="w3-text-grey w3-padding-16"><i
                                 class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-tealp"></i>Cambio de datos
                         </h2>
-                        <form th:action="@{/login_persona}" th:object="${personaForm}" method="post">
+                        <form>
                             <div class="w3-container">
                                 <h5 class="w3-opacity"><b>Nombre</b></h5>
                                 <input type="text" placeholder="Nuevo Nombre">
@@ -172,7 +169,7 @@
                     </div>
                     <div class="col">
                         <div class="link">
-                            <h5>Links</h5>
+                            <h5>Enlaces</h5>
                             <ul>
                                 <div class="Links">
                                     <li><a th:href="@{/}">Inicio</a></li>

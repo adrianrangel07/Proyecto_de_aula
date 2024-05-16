@@ -43,6 +43,7 @@ body {
     width: 150px;
     cursor: pointer;
     transition: transform 0.3s;
+    user-select: none;
 }
 
 #logo:hover {
@@ -259,13 +260,17 @@ main {
 }
 
 .imagen{
-    border-radius: 30px ;
     position: fixed;
-    box-shadow: 0 0 5px rgba(10, 17, 40, 0.5);
-    width: 480px;
+    width: 350px;
     height: 350px;
     opacity: 0.9;
+    image-rendering: crisp-edges;
+    user-select: none;  
+    margin-left: 110px;
+    filter:drop-shadow(0 0 0 #000);
 }
+
+
 
 @media (max-width: 600px){
     .barra_busqueda{

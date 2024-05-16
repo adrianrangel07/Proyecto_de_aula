@@ -6,36 +6,15 @@ body {
     background-color: #bde0fe;
 }
 
-.border-imagen{
-    position: relative;
-    align-self: center;
-    text-align: center;
-    justify-content: center;
-}
-
 .imagen{
-    border-radius: 30px ;
-    position: relative;
-    align-self: center;
-    text-align: center;
-    justify-content: center;
-    width: 120px;
-    height: 120px;
-    opacity: 1;
-    animation: moveAndRotate 8s infinite alternate;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes moveAndRotate {
-    0% {
-        transform: translateX(-80px) rotateY(0deg);
-    }
-    50% {
-        transform: translateX(80px) rotateY(180deg);
-    }
-    100% {
-        transform: translateX(0) rotateY(360deg);
-    }
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    opacity: 0.9;
+    image-rendering: crisp-edges;
+    user-select: none;  
+    margin-left: 110px;
+    filter:drop-shadow(0 0 0 #000);
 }
 
 .navbar {

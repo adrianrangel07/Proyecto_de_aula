@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.proyectodeaula.proyecto_de_aula.interfaces.Personas.Interfaz_Persona;
 import com.proyectodeaula.proyecto_de_aula.interfaces.Personas.Interfaz_Usuario_Per;
 import com.proyectodeaula.proyecto_de_aula.model.PersonaForm;
 import com.proyectodeaula.proyecto_de_aula.model.Personas;
 import com.proyectodeaula.proyecto_de_aula.model.Usuario_persona;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping
@@ -59,13 +60,15 @@ public class PersonaController {
     }
 
     @PostMapping("/login_inicio")
-    public String iniciarSesion(Model model, @RequestParam String email, @RequestParam String contraseña) {
+    public String iniciarSesion(Model model, @RequestParam String email, @RequestParam String contraseña,
+            HttpSession session) {
         Usuario_persona usuario = user.findByEmailAndContraseña(email, contraseña);
         if (usuario != null) {
             Personas persona = usuario.getPersonas();
             if (persona != null) {
+                session.setAttribute("loggedInUser", usuario); // Almacenar el usuario en la sesión
                 model.addAttribute("nombreUsuario", persona.getNombrePer());
-                return "redirect:/login_inicio"; // Redirigir a la nueva ruta
+                return "redirect:/login_inicio";
             } else {
                 model.addAttribute("error", "La persona asociada al usuario no fue encontrada");
                 return "html/contraseña_incorrectauser";
@@ -97,13 +100,15 @@ public class PersonaController {
     }
 
     @GetMapping("/perfil")
-    public String Myperfil() {
+    public String Myperfil(Model model, HttpSession session) {
+        Usuario_persona usuario = (Usuario_persona) session.getAttribute("loggedInUser");
+        if (usuario != null) {
+            Personas persona = usuario.getPersonas();
+            model.addAttribute("nombre", persona.getNombrePer());
+            model.addAttribute("apellido", persona.getApellidoPer());
+            model.addAttribute("email", usuario.getEmail());
+        }
         return "html/Mi_perfil";
-    }
-
-    @GetMapping("/configuracion")
-    public String configuracion() {
-        return "html/Configuracion";
     }
 
 }

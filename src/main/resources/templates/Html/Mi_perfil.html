@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es" xmlns:th="https://www.thymeleaf.org">
 
@@ -91,11 +92,12 @@
                     <div class="w3-white w3-text-grey w3-card-4 ">
                         <div class="content">
                             <div class="w3-display-container">
-                                <i class="fa fa-camera camara"></i>
-                                <img src="../Imagenes/userperfil.png" style="width:100%" alt="Avatar">
+                                <i class="fa fa-camera camara" onclick="triggerFileInput()"></i>
+                                <input type="file" accept="image/*" onchange="loadFile(event)" id="file" style="display: none;">
+                                <img  style="width:100%" alt="Avatar" id="fotoperfil" src="../Imagenes/imagenperfil.png">
                             </div>
                             <div class="w3-container">
-                                <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-tealp"></i>*Nombre*</p>
+                                <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-tealp"></i>nombre</p>
                                 <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-tealp"></i>*Apellido*</p>
                                 <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-tealp"></i>*email*</p>
                                 <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-tealp"></i>123456</p>
@@ -104,7 +106,9 @@
                         </div>
                         <div class="w3-container">
                             <h2><i class="fa fa-suitcase fa-fw w3-margin-right  w3-text-tealp porta"></i>Subir hoja de vida</h2>
-                            <button type="submit" id="validar">Subir hoja de vida</button>
+                            <input type="file" id="pdfInput" accept=".pdf" style="display: none;">
+                            <button type="submit" id="validar" onclick="document.getElementById('pdfInput').click();">Subir Archivo</button>
+                            <iframe id="pdfViewer" width="100%" height="500px" frameborder="0" hidden></iframe>
                             <hr>
                         </div>
                     </div><br>
@@ -119,30 +123,31 @@
                         <h2 class="w3-text-grey w3-padding-16"><i
                                 class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-tealp"></i>Cambio de datos
                         </h2>
-                        <div class="w3-container">
-                            <h5 class="w3-opacity"><b>Nombre</b></h5>
-                            <input type="text" placeholder="Nuevo Nombre">
-                            <hr>
-                        </div>
-                        <div class="w3-container">
-                            <h5 class="w3-opacity"><b>Apellido</b></h5>
-                            <input type="text" placeholder="Nuevo Apellido">
-                            <hr>
-                        </div>
-                        <div class="w3-container">
-                            <h5 class="w3-opacity"><b>Email</b></h5>
-                            <input type="text" placeholder="Nuevo Email">
-                            <hr>
-                        </div>
-                        <div class="w3-container">
-                            <h5 class="w3-opacity"><b>Contraseña</b></h5>
-                            <input type="text" placeholder="Nuevo Contraseña">
-                            <hr>
-                        </div>
-                        <div class="w3-container">
-                            <button type="submit" id="validar">Guardar Datos</button>
-                        </div>
-
+                        <form th:action="@{/login_persona}" th:object="${personaForm}" method="post">
+                            <div class="w3-container">
+                                <h5 class="w3-opacity"><b>Nombre</b></h5>
+                                <input type="text" placeholder="Nuevo Nombre">
+                                <hr>
+                            </div>
+                            <div class="w3-container">
+                                <h5 class="w3-opacity"><b>Apellido</b></h5>
+                                <input type="text" placeholder="Nuevo Apellido">
+                                <hr>
+                            </div>
+                            <div class="w3-container">
+                                <h5 class="w3-opacity"><b>Email</b></h5>
+                                <input type="email" placeholder="Correo electrónico">
+                                <hr>
+                            </div>
+                            <div class="w3-container">
+                                <h5 class="w3-opacity"><b>Contraseña</b></h5>
+                                <input type="text" placeholder="Nuevo Contraseña">
+                                <hr>
+                            </div>
+                            <div class="w3-container">
+                                <button type="submit" id="validar">Guardar Datos</button>
+                            </div>
+                        </form>
                     </div>
 
                 
@@ -214,6 +219,8 @@
 
     <!-- Script de JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/foto.js"></script>
+    <script src="../js/HV.js"></script>
 
 </body>
 

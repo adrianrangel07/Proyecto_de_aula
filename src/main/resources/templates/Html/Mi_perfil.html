@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es" xmlns:th="https://www.thymeleaf.org">
 
@@ -12,8 +11,8 @@
     <title>Workwise Navigator</title>
     <link rel="website icon" href="../imagenes/wknlogo2.png">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -48,7 +47,7 @@
                             <li class="nav-item">
                                 <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/login_inicio}">VOLVER
                                     AL INICIO</a>
-                            </li>                          
+                            </li>
                             <li class="nav-item dropdown"> <!-- barra desplagable dentro de la barrra lateral-->
                                 <a class="letras nav-link dropdown-toggle" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,72 +82,82 @@
                         <div class="content">
                             <div class="w3-display-container">
                                 <i class="fa fa-camera camara" onclick="triggerFileInput()"></i>
-                                <input type="file" accept="image/png, image/jpeg" onchange="loadFile(event)" id="file" style="display: none;">
-                                <img  style="width:100%" alt="Avatar" id="fotoperfil" src="../Imagenes/imagenperfil.png">
+                                <input type="file" accept="image/png, image/jpeg" onchange="loadFile(event)" id="file"
+                                    style="display: none;">
+                                <img style="width:100%" alt="Avatar" id="fotoperfil" src="../Imagenes/imagenperfil.png">
                             </div>
                             <div class="w3-container">
-                                <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${nombre}]]</p>
-                                <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${apellido}]]</p>
-                                <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${email}]]</p>
+                                <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${nombre}]]
+                                </p>
+                                <p><i
+                                        class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${apellido}]]
+                                </p>
+                                <p><i
+                                        class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${email}]]
+                                </p>
                                 <hr>
                             </div>
-                            
+
                         </div>
                         <div class="w3-container">
-                            <h2><i class="fa fa-suitcase fa-fw w3-margin-right  w3-text-tealp porta"></i>Subir hoja de vida</h2>
+                            <h2><i class="fa fa-suitcase fa-fw w3-margin-right  w3-text-tealp porta"></i>Hoja De Vida
+                            </h2>
                             <input type="file" id="pdfInput" accept=".pdf" style="display: none;">
-                            <button type="submit" id="validar" onclick="document.getElementById('pdfInput').click();">Subir Archivo</button>
+                            <button type="submit" id="validar"
+                                onclick="document.getElementById('pdfInput').click();">Subir Archivo</button>
                             <iframe id="pdfViewer" width="100%" height="500px" frameborder="0" hidden></iframe>
                             <hr>
                         </div>
                     </div><br>
-
                     <!-- End Left Column -->
                 </div>
 
                 <!-- Right Column -->
                 <div class="w3-twothird">
-
                     <div class="w3-container w3-card w3-white w3-margin-bottom">
                         <h2 class="w3-text-grey w3-padding-16"><i
-                                class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-tealp"></i>Cambio de datos
+                                class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-tealp"></i>Cambio de
+                            datos
                         </h2>
-                        <form>
+                        <form th:action="@{/perfil/actualizar}" method="post">
                             <div class="w3-container">
                                 <h5 class="w3-opacity"><b>Nombre</b></h5>
-                                <input type="text" placeholder="Nuevo Nombre">
+                                <input type="text" name="personas.nombrePer" th:value="${nombre}"
+                                    placeholder="Nuevo Nombre">
                                 <hr>
                             </div>
                             <div class="w3-container">
                                 <h5 class="w3-opacity"><b>Apellido</b></h5>
-                                <input type="text" placeholder="Nuevo Apellido">
+                                <input type="text" name="personas.apellidoPer" th:value="${apellido}"
+                                    placeholder="Nuevo Apellido">
                                 <hr>
                             </div>
                             <div class="w3-container">
                                 <h5 class="w3-opacity"><b>Email</b></h5>
-                                <input type="email" placeholder="Correo electrónico">
+                                <input type="email" name="usuario_persona.email" th:value="${email}"
+                                    placeholder="Correo electrónico">
                                 <hr>
                             </div>
                             <div class="w3-container">
                                 <h5 class="w3-opacity"><b>Contraseña</b></h5>
-                                <input type="text" placeholder="Nuevo Contraseña">
+                                <input type="password" name="usuario_persona.contraseña" th:value="${Contraseña}"
+                                    placeholder="Nueva Contraseña" required>
                                 <hr>
                             </div>
                             <div class="w3-container">
-                                <button type="submit" id="validar">Guardar Datos</button>
+                                <button type="button" id="modificar" onclick="activarGuardar()">Modificar Datos</button>
+                                <button type="submit" id="guardar" disabled onclick="Guardar()">Guardar Datos</button>
                             </div>
                         </form>
+
+                        <!-- End Right Column -->
                     </div>
 
-                
-                    <!-- End Right Column -->
+                    <!-- End Grid -->
                 </div>
 
-                <!-- End Grid -->
+                <!-- End Page Container -->
             </div>
-
-            <!-- End Page Container -->
-        </div>
     </main>
     <footer class="footer">
         <div class="container">
@@ -211,7 +220,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/foto.js"></script>
     <script src="../js/HV.js"></script>
-
+    <script src="../js/perfil.js"></script>
 </body>
 
 </html>

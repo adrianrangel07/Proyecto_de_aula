@@ -9,41 +9,37 @@ body {
     user-select: none;
 }
 
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;                    /* barra superior de navegacion */
-    background-color:#0a1128;
-    color: white;
-    padding: 10px;
-    height: 44px;
-}
-.nav-menu{
-    display: flex;
-    margin-right: 0px;              /* las opciones de registro y empresa*/
-    list-style: none;
-    line-height: 24px;
+.navbar {
+    background-color: #0a1128;
+    position: sticky;
+    /* barra superior */
 }
 
-.nav-menu-item{
-    font-size: 17px;
-    margin: 0 15px; 
-    width: max-content;
-    height: 10px;
+.offcanvas {
+    background-color: #0a1128;
+    /* barra de navegacion */
 }
 
-.nav-menu-item a{
-    text-decoration: none;
+.letras {
     color: #ffffff;
-    padding: 10px;
-    border-radius: 10px;
 }
 
-.nav-menu-item a:hover{
+.dropdown-menu {
+    background-color: #001f54;
+    /* barra desplegable dentro de la barra lateral de navegacion */
+}
+
+
+.nav-rp {
+    border-radius: 8px;
+    /* el bordeado de las opciones de inicio de sesesion y registrarse */
+    width: 100%;
+}
+
+.nav-rp:hover {
+    color: #001f54;
     background-color: #ffffff;
-    color: #0a1128;
-    height: 40px;
-    transition: 0.4s;
+    border-radius: 8px;
 }
 
 #logo {
@@ -126,4 +122,10 @@ h1 {
 
 .register-form button:hover {
     background-color: #034078;
+}
+
+.contenedor{
+    display: flex;
+    align-items: center;
+    height: 100%;
 }

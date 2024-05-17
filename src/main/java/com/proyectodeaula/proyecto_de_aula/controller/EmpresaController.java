@@ -13,7 +13,11 @@ import com.proyectodeaula.proyecto_de_aula.interfaces.Empresas.Interfaz_Empresa;
 import com.proyectodeaula.proyecto_de_aula.interfaces.Empresas.Interfaz_Usuario_Emp;
 import com.proyectodeaula.proyecto_de_aula.model.EmpresaForm;
 import com.proyectodeaula.proyecto_de_aula.model.Empresas;
+import com.proyectodeaula.proyecto_de_aula.model.Personas;
 import com.proyectodeaula.proyecto_de_aula.model.Usuario_empresa;
+import com.proyectodeaula.proyecto_de_aula.model.Usuario_persona;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping
@@ -60,13 +64,14 @@ public class EmpresaController {
 
 	// inicio de sesion, validacion de datos y redireccionamiendo de pagina
 	@PostMapping("/inicio_empresa")
-	public String iniciarSesionemp(Model model, @RequestParam String email, @RequestParam String contraseña) {
+	public String iniciarSesionemp(Model model, @RequestParam String email, @RequestParam String contraseña,HttpSession session) {
         // Buscar al usuario en la base de datos por su email y contraseña
         Usuario_empresa usu_empresa = u_emp.findByEmailAndContraseña(email, contraseña);
         if (usu_empresa != null) {
             // Aquí obtienes la empresa asociada al usuario
             Empresas empresa = usu_empresa.getEmpresa();
             if (empresa != null) {
+                session.setAttribute("loggedInEmp", usu_empresa); // Almacenar el usuario en la sesión
                 model.addAttribute("nombreEmpresa", empresa.getNombreEmp());
                 // Si el usuario existe, puedes redirigir a la página InicioEmp.html
                 return "html/InicioEmp";
@@ -101,5 +106,17 @@ public class EmpresaController {
     @GetMapping("/Contraseña-olvidada-empresa")
     public String olvidar_emp(){
         return "html/contraseña_olvidada_emp";
+    }
+
+    @GetMapping("/Perfil-Empresa")
+    public String perfil_emp(Model model, HttpSession session) {
+        Usuario_empresa usu_empresa = (Usuario_empresa) session.getAttribute("loggedInEmp");
+        if (usu_empresa != null) {
+            Empresas empresa = usu_empresa.getEmpresa();
+            model.addAttribute("nombreemp", empresa.getNombreEmp());
+            model.addAttribute("direccion", empresa.getDireccion());
+            model.addAttribute("emailemp", usu_empresa.getEmail());
+        }
+        return "html/perfilemp";
     }
 }

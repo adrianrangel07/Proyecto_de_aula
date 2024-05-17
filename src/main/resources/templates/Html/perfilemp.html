@@ -12,8 +12,8 @@
     <title>Workwise Navigator</title>
     <link rel="website icon" href="../imagenes/wknlogo2.png">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
@@ -24,7 +24,7 @@
     <header class="top-bar">
         <nav class="navbar navbar-dark  fixed-top">
             <div class="container-fluid"> <!-- barra superior-->
-                <a class="navbar-brand" th:href=@{/login_inicio}>
+                <a class="navbar-brand" th:href=@{/inicio_empresa}>
                     <img src="../Imagenes/wknname.png" alt="Logo" id="logo" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -46,7 +46,7 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/login_inicio}">VOLVER
+                                <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/inicio_empresa}">VOLVER
                                     AL INICIO</a>
                             </li>                          
                             <li class="nav-item dropdown"> <!-- barra desplagable dentro de la barrra lateral-->
@@ -87,19 +87,14 @@
                                 <img  style="width:100%" alt="Avatar" id="fotoperfil" src="../Imagenes/imagenperfil.png">
                             </div>
                             <div class="w3-container">
-                                <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${nombre}]]</p>
-                                <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${apellido}]]</p>
-                                <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${email}]]</p>
+                                <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${nombreemp}]]</p>
+                                <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${direccion}]]</p>
+                                <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-tealp"></i>[[${emailemp}]]</p>
                                 <hr>
                             </div>
                             
                         </div>
                         <div class="w3-container">
-                            <h2><i class="fa fa-suitcase fa-fw w3-margin-right  w3-text-tealp porta"></i>Subir hoja de vida</h2>
-                            <input type="file" id="pdfInput" accept=".pdf" style="display: none;">
-                            <button type="submit" id="validar" onclick="document.getElementById('pdfInput').click();">Subir Archivo</button>
-                            <iframe id="pdfViewer" width="100%" height="500px" frameborder="0" hidden></iframe>
-                            <hr>
                         </div>
                     </div><br>
 
@@ -120,8 +115,8 @@
                                 <hr>
                             </div>
                             <div class="w3-container">
-                                <h5 class="w3-opacity"><b>Apellido</b></h5>
-                                <input type="text" placeholder="Nuevo Apellido">
+                                <h5 class="w3-opacity"><b>Direccion</b></h5>
+                                <input type="text" placeholder="Nueva Direccion">
                                 <hr>
                             </div>
                             <div class="w3-container">

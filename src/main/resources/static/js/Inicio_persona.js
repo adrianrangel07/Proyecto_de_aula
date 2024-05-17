@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //mensaje de cerrar sesion
 document.addEventListener('DOMContentLoaded', function () {
-    const cerrarSesion = document.querySelector('.nav-rp');
+    const cerrarSesion = document.querySelector('.cerrar');
     if (cerrarSesion) {
         cerrarSesion.addEventListener('click', function (event) {
             event.preventDefault(); // Evitar que se ejecute el href del enlace

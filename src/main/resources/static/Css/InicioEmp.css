@@ -117,17 +117,14 @@ body {
 
 /* Estilos para las ofertas */
 main {
-    /* position: absolute;
-    overflow: hidden; */
-    /* O overflow: auto; según tus necesidades */
-    width: 100%;
-    /* margin-top: 80px; */
-    /* Altura del header */
+    display: inline-block;
+    /* margin-top: 80px; Altura del header */
+    margin-bottom: 100px; /* Altura del footer */
 }
 
-
-.more {
-    margin: 7PX;
+/* .more {
+    position: absolute;
+    margin-left: 20px;
     display: flex;
     height: 50px;
     width: 50px;
@@ -136,22 +133,35 @@ main {
     align-items: center;
     justify-content: center;
     border: solid #000000;
-    position: relative;
-    left: 94%;
+} */
+
+
+
+.more button {
+    position: absolute;
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #001f54;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.more:hover {
-    transform: scale(1.2);
-    /* background-color: #0a1128; */
+.more button:hover {
+    background-color: #034078;
 }
 
-.more {
-    transition: .3s;
-}
-
-.more img {
-    height: 25px;
-    width: 25px;
+.imagen{
+    position: fixed;
+    margin-top: 10px;
+    width: 350px;
+    height: 350px;
+    opacity: 0.9;
+    image-rendering: crisp-edges;
+    user-select: none;  
+    margin-left: 110px;
+    filter:drop-shadow(0 0 0 #000);
 }
 
 /* footer */
@@ -258,8 +268,7 @@ main {
     .barra_busqueda_responsive{
         display: block;
     }
-
-    .more {
-            left: 85%;
+    .imagen {
+        display: none;
     }
 }

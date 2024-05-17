@@ -55,11 +55,11 @@
                     <div class="offcanvas-body">
                         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                             <li class="nav-item">
-                                <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/}">Cerrar Sesión</a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="letras nav-rp nav-link " aria-current="page" th:href="@{/perfil}">Mi
                                     perfil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="letras nav-rp nav-link cerrar" aria-current="page" th:href="@{/}">Cerrar Sesión</a>
                             </li>
                             <li class="nav-item dropdown"> <!-- barra desplagable dentro de la barrra lateral-->
                                 <a class="letras nav-link dropdown-toggle" href="#" role="button"
@@ -81,7 +81,7 @@
                             <form class="d-flex" role="search">
                                 <input class="form form-control me-2" type="search" id="termino" name="termino"
                                     placeholder="Buscar ofertas..." aria-label="Search">
-                                <button class="btn btn-outline-success" id="btn" type="submit">Search</button>
+                                <button class="btn btn-outline-success" id="btn" type="submit">Buscar</button>
                             </form>
                         </div>
                     </div>

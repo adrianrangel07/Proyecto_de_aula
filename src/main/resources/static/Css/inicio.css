@@ -151,6 +151,17 @@ body {
     color: #000;
 }
 
+.imagen{
+    position: fixed;
+    width: 350px;
+    height: 350px;
+    opacity: 0.9;
+    image-rendering: crisp-edges;
+    user-select: none;  
+    margin-left: 110px;
+    filter:drop-shadow(0 0 0 #000);
+}
+
 /* footer */
 
 .footer {
@@ -259,16 +270,7 @@ main {
     transform: scale(1.1);
 }
 
-.imagen{
-    position: fixed;
-    width: 350px;
-    height: 350px;
-    opacity: 0.9;
-    image-rendering: crisp-edges;
-    user-select: none;  
-    margin-left: 110px;
-    filter:drop-shadow(0 0 0 #000);
-}
+
 
 
 

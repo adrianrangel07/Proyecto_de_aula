@@ -13,9 +13,7 @@ import com.proyectodeaula.proyecto_de_aula.interfaces.Empresas.Interfaz_Empresa;
 import com.proyectodeaula.proyecto_de_aula.interfaces.Empresas.Interfaz_Usuario_Emp;
 import com.proyectodeaula.proyecto_de_aula.model.EmpresaForm;
 import com.proyectodeaula.proyecto_de_aula.model.Empresas;
-import com.proyectodeaula.proyecto_de_aula.model.Personas;
 import com.proyectodeaula.proyecto_de_aula.model.Usuario_empresa;
-import com.proyectodeaula.proyecto_de_aula.model.Usuario_persona;
 
 import jakarta.servlet.http.HttpSession;
 

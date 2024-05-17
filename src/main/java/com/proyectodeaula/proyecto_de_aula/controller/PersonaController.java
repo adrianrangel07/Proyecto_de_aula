@@ -111,4 +111,28 @@ public class PersonaController {
         return "html/Mi_perfil";
     }
 
+    @PostMapping("/perfil/actualizar")
+    public String actualizarPerfil(@ModelAttribute("personaForm") PersonaForm personaForm, HttpSession session,
+            Model model) {
+        Usuario_persona usuario = (Usuario_persona) session.getAttribute("loggedInUser");
+        if (usuario != null) {
+            Personas persona = usuario.getPersonas();
+            persona.setNombrePer(personaForm.getPersonas().getNombrePer());
+            persona.setApellidoPer(personaForm.getPersonas().getApellidoPer());
+            usuario.setEmail(personaForm.getUsuario_persona().getEmail());
+            usuario.setContraseña(personaForm.getUsuario_persona().getContraseña());
+
+            // Actualizar persona y usuario_persona en la base de datos
+            per.save(persona);
+            user.save(usuario);
+
+            model.addAttribute("nombre", persona.getNombrePer());
+            model.addAttribute("apellido", persona.getApellidoPer());
+            model.addAttribute("email", usuario.getEmail());
+            model.addAttribute("contraseña", usuario.getContraseña());
+            model.addAttribute("message", "Datos actualizados correctamente");
+        }
+        return "redirect:/perfil";
+    }
+
 }

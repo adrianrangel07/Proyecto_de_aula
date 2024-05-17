@@ -69,7 +69,7 @@ public class EmpresaController {
             if (empresa != null) {
                 model.addAttribute("nombreEmpresa", empresa.getNombreEmp());
                 // Si el usuario existe, puedes redirigir a la página InicioEmp.html
-                return "html/InicioEmp";
+                return "redirect:/inicio_empresa";
             } else {
                 // Si la empresa asociada al usuario es nula, puedes agregar un mensaje de error
                 model.addAttribute("error", "La empresa asociada al usuario no fue encontrada");
@@ -82,11 +82,6 @@ public class EmpresaController {
             return "html/contraseña_incorrectaemp";
         }
     }
-
-	@GetMapping("/inicio_empresa")
-	public String inicio() {
-		return "html/InicioEmp";
-	}
 
 	@GetMapping("/contraseña_incorrectaemp")
 	public String contraseña_incorrecta() {

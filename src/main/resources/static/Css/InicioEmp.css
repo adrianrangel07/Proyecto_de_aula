@@ -4,10 +4,7 @@
 
 /* te sivre para cambiar el fondo */
 body {
-    background-color: #dceef5;
-    background-image: radial-gradient(#212d65 1px, transparent 1px), radial-gradient(#654321 1px, transparent 1px);
-    background-size: 40px 40px;
-    background-position: 0 0, 20px 20px;
+    background-color: #bde0fe;
 }
 
 

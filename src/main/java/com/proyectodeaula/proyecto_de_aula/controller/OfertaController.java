@@ -32,6 +32,13 @@ public class OfertaController {
 		return "html/Inicio_login";
 	}
 
+	@GetMapping("/inicio_empresa")
+	public String listar_ofertas_2(Model model){
+		List <Ofertas> Ofertas1=offerService.listar_ofertas();
+		model.addAttribute("Ofertas1", Ofertas1);
+		return "html/InicioEmp";
+	}
+
     @GetMapping("/")
 	public String listar_ofertas(Model model){
 		List <Ofertas> Ofertas=offerService.listar_ofertas();

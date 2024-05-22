@@ -208,22 +208,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// //imagen con cambios
-// document.addEventListener('DOMContentLoaded', function () {
-//     const imagenes = ['2.jpeg', '3.jpeg']; // Array con las rutas de las imágenes
-//     let indiceImagen = 0;
-//     const imagenElement = document.querySelector('.imagen img');
-
-//     function cambiarImagen() {
-//         imagenElement.src = '../Imagenes/' + imagenes[indiceImagen];
-//         indiceImagen = (indiceImagen + 1) % imagenes.length; // Avanzar al siguiente índice, asegurándose de que no se pase del límite del array
-//     }
-
-//     cambiarImagen(); // Mostrar la primera imagen al cargar la página
-
-//     setInterval(cambiarImagen, 5000); // Cambiar la imagen cada 5 segundos (5000 milisegundos)
-// });
-
 document.addEventListener('DOMContentLoaded', function () {
     const offers = document.querySelectorAll('.offer');
     const offerDetails = document.querySelector('.offerDetails');
